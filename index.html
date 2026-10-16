@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3f3ee">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="사찰기행">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -13 24 24'%3E%3Crect x='-12' y='-13' width='24' height='24' rx='6' fill='%23fde8ee'/%3E%3Cpath d='M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z' fill='%23de6d8c'/%3E%3Cpath d='M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z' fill='%23de6d8c' transform='rotate(-38 0 4)'/%3E%3Cpath d='M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z' fill='%23de6d8c' transform='rotate(38 0 4)'/%3E%3Cpath d='M-7 5 Q0 9.5 7 5' stroke='%235c9d4e' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -13 24 24'%3E%3Crect x='-12' y='-13' width='24' height='24' rx='6' fill='%23fde8ee'/%3E%3Cpath d='M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z' fill='%23de6d8c'/%3E%3Cpath d='M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z' fill='%23de6d8c' transform='rotate(-38 0 4)'/%3E%3Cpath d='M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z' fill='%23de6d8c' transform='rotate(38 0 4)'/%3E%3Cpath d='M-7 5 Q0 9.5 7 5' stroke='%235c9d4e' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>주유니의 사찰기행</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: seasonal landscape hero, ink map of Korea + journal column, footprints timeline, stamp book. Celadon + lotus pink + seal red on soft paper. */
+:root{
+  --bg:#f3f3ee; --paper:#ffffff; --ink:#22302c; --ink-soft:#56635d; --mist:#8b958f; --line:#e1e4dd;
+  --celadon:#9a6a2c; --celadon-soft:#f8eedf; --seal:#c23d2e; --seal-soft:#fbe5e0; --lotus:#de6d8c; --lotus-soft:#fde8ee; --violet:#b08d64; --leaf:#5c9d4e; --leaf-soft:#e7f2e1; --lotus-2:#f5b2c5; --gold:#c08a2e; --gold-soft:#fbf0d9;
+  --sea:#e3ebe9; --sea-line:#d0dcd9; --shadow:0 1px 2px rgba(34,48,44,.05),0 10px 30px rgba(34,48,44,.08);
+  --land-spring:#e6eccf; --land-summer:#bcd9b6; --land-autumn:#f1cc9f; --land-winter:#f4f7f8; --border-land:#ffffff;
+  --f:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#131917; --paper:#1c2421; --ink:#e8ece6; --ink-soft:#b5bfb9; --mist:#859089; --line:#2e3935;
+  --celadon:#e6b96d; --celadon-soft:#3a2f22; --seal:#e66652; --seal-soft:#3b2420; --lotus:#f08fab; --lotus-soft:#3d2430; --gold:#e3b75c; --gold-soft:#3a3020; --violet:#cdaa82; --leaf:#8fcf74; --leaf-soft:#243320; --lotus-2:#f7bccd;
+  --sea:#16201d; --sea-line:#22302c; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3);
+  --land-spring:#4a5340; --land-summer:#33503b; --land-autumn:#6a4a2c; --land-winter:#56616a; --border-land:#1c2421;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131917; --paper:#1c2421; --ink:#e8ece6; --ink-soft:#b5bfb9; --mist:#859089; --line:#2e3935;
+  --celadon:#e6b96d; --celadon-soft:#3a2f22; --seal:#e66652; --seal-soft:#3b2420; --lotus:#f08fab; --lotus-soft:#3d2430; --gold:#e3b75c; --gold-soft:#3a3020; --violet:#cdaa82; --leaf:#8fcf74; --leaf-soft:#243320; --lotus-2:#f7bccd;
+  --sea:#16201d; --sea-line:#22302c; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3);
+  --land-spring:#4a5340; --land-summer:#33503b; --land-autumn:#6a4a2c; --land-winter:#56616a; --border-land:#1c2421;
+  color-scheme:dark}
+:root{--land:var(--land-autumn)}
+body[data-season="spring"]{--land:var(--land-spring)}
+body[data-season="summer"]{--land:var(--land-summer)}
+body[data-season="autumn"]{--land:var(--land-autumn)}
+body[data-season="winter"]{--land:var(--land-winter)}
+
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.65;letter-spacing:-.015em;-webkit-font-smoothing:antialiased;word-break:keep-all}
+button,input,textarea{font-family:var(--f);letter-spacing:inherit}
+button{font-size:inherit;color:inherit;cursor:pointer}
+a{color:var(--celadon)}
+:focus-visible{outline:3px solid var(--lotus);outline-offset:2px;border-radius:10px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 48px;position:relative;z-index:1}
+
+/* hero */
+.hero{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:var(--paper);min-height:270px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:28px}
+.hero-art{position:absolute;inset:0;line-height:0}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--paper) 0%,color-mix(in srgb,var(--paper) 88%,transparent) 38%,color-mix(in srgb,var(--paper) 10%,transparent) 72%,transparent 100%)}
+.hero>*:not(.hero-art){position:relative;z-index:2}
+.greet{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:500;color:var(--lotus);background:var(--lotus-soft);padding:6px 14px;border-radius:999px;animation:rise .7s ease both}
+h1{font-weight:800;font-size:clamp(36px,6.4vw,58px);line-height:1.12;margin:12px 0 8px;letter-spacing:-.04em;animation:rise .7s .08s ease both}
+h1 .yu{background:linear-gradient(120deg,var(--lotus),var(--seal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--ink-soft);font-size:17px;margin:0;max-width:30em;animation:rise .7s .16s ease both}
+.saying{margin-top:14px;font-size:16px;color:var(--ink);display:flex;gap:10px;align-items:flex-start;max-width:30em;animation:rise .7s .24s ease both}
+.saying svg{flex:none;margin-top:3px}
+@keyframes rise{from{transform:translateY(10px);opacity:.3}to{transform:none;opacity:1}}
+.seasons{display:flex;gap:6px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);padding:6px;border-radius:999px;box-shadow:var(--shadow);align-self:flex-start}
+.sz{display:flex;flex-direction:column;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;border:0;background:transparent;transition:background .3s,transform .3s}
+.sz b{font-size:20px;line-height:1.1;font-weight:700}
+.sz span{font-size:13px;color:var(--ink-soft)}
+.sz:hover{transform:translateY(-2px)}
+.sz[aria-pressed="true"]{background:var(--celadon);color:#fff}
+.sz[data-s="spring"][aria-pressed="true"]{background:linear-gradient(135deg,#f3a6bb,#e27c9a)}
+.sz[data-s="summer"][aria-pressed="true"]{background:linear-gradient(135deg,#6cc3e0,#3a93c6)}
+.sz[data-s="autumn"][aria-pressed="true"]{background:linear-gradient(135deg,#f0a04b,#d4602a)}
+.sz[data-s="winter"][aria-pressed="true"]{background:linear-gradient(135deg,#9fb6cc,#6b87a6)}
+.sz[aria-pressed="true"] span{color:#fff;opacity:.85}
+@media (max-width:640px){
+  .hero{padding:22px 20px;min-height:0}
+  .hero::before{background:linear-gradient(180deg,color-mix(in srgb,var(--paper) 94%,transparent) 0%,color-mix(in srgb,var(--paper) 82%,transparent) 62%,color-mix(in srgb,var(--paper) 30%,transparent) 100%)}
+  .seasons{width:100%;justify-content:space-between}
+  .sz{flex:1;width:auto;height:56px;border-radius:999px}
+}
+
+/* chips */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:18px 2px 12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:0;background:var(--paper);box-shadow:0 1px 2px rgba(0,0,0,.05);border-radius:999px;padding:11px 18px;font-size:17px;font-weight:500;display:flex;align-items:center;gap:8px;transition:all .25s}
+.chip small{font-size:13px;color:var(--mist);font-weight:400;font-variant-numeric:tabular-nums}
+.chip:hover{transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip[aria-pressed="true"] small{color:var(--paper);opacity:.75}
+.chip.easychip{background:var(--leaf-soft);gap:6px}
+.chips.feat{padding-top:0;align-items:center}
+.feat-l{flex:none;font-size:14px;font-weight:700;color:var(--ink-soft);padding:0 4px 0 2px}
+.tag.x{background:var(--gold-soft);color:var(--gold)}
+.chip.easychip[aria-pressed="true"]{background:var(--leaf);color:#fff}
+.tag.e{background:var(--leaf-soft);color:var(--leaf)}
+.acc{display:grid;gap:8px}
+.acc div{display:flex;gap:10px;align-items:flex-start;font-size:17px}
+.acc b{flex:none;width:52px;font-size:14px;color:var(--ink-soft);font-weight:500;padding-top:2px}
+.acc .unk{color:var(--mist)}
+
+.main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:900px){.main{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.chips{flex-wrap:wrap;overflow:visible;gap:7px}.chip{padding:9px 14px;font-size:16px}}
+
+/* map */
+.mapcard{position:relative;background:var(--sea);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+#map{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+#map.dragging{cursor:grabbing}
+.zoomctl{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;background:var(--paper);border-radius:999px;box-shadow:var(--shadow);overflow:hidden}
+.zoomctl button{border:0;background:transparent;width:44px;height:44px;font-size:22px;line-height:1}
+.zoomctl button+button{border-top:1px solid var(--line)}
+@media (max-width:520px){.maplegend{bottom:64px}}
+.prov{fill:var(--land);stroke:var(--border-land);stroke-width:.9;transition:fill 1.2s ease,opacity .6s;cursor:pointer}
+.prov.alt{fill-opacity:.8}
+.prov.dim{opacity:.35}
+.prov:hover{fill-opacity:.68}
+.rlabel{font-family:var(--f);font-weight:800;fill:var(--ink);opacity:.22;pointer-events:none;transition:opacity .5s;letter-spacing:-.04em}
+.zoomed .rlabel{opacity:0}
+.mk{cursor:pointer}
+.mk .in{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.3,1.6,.5,1) both;transition:transform .25s}
+.mk:hover .in{transform:scale(1.25)}
+.mk .lbl{font-family:var(--f);font-weight:500;font-size:8.4px;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2.6px;stroke-linejoin:round;opacity:0;transition:opacity .4s;pointer-events:none}
+.zoomed .mk .lbl{opacity:1}
+.mk.hide{display:none}
+.ring{fill:none;stroke:var(--lotus);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ring 1.8s ease-out infinite}
+@keyframes pop{from{transform:scale(0);opacity:.2}to{transform:scale(1);opacity:1}}
+@keyframes ring{from{transform:scale(.8);opacity:.9}to{transform:scale(2.4);opacity:0}}
+.maplegend{position:absolute;left:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:4px;background:color-mix(in srgb,var(--paper) 92%,transparent);padding:5px;border-radius:999px;max-width:calc(100% - 20px);box-shadow:var(--shadow)}
+.lg{border:0;background:transparent;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:background .25s}
+.lg i{display:inline-block;width:11px;height:11px}
+.lg[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.pbtn{border:0;background:var(--bg);border-radius:999px;padding:6px 14px;font-size:15px;color:var(--ink-soft);transition:all .25s}
+.pbtn b{color:var(--ink)}
+.pbtn:hover{transform:translateY(-1px)}
+.pbtn[data-f="v"][aria-pressed="true"]{background:var(--lotus);color:#fff}
+.pbtn[data-f="w"][aria-pressed="true"]{background:var(--leaf);color:#fff}
+.pbtn,.lg{display:inline-flex;align-items:center;gap:6px}
+.ic{display:inline-flex;line-height:0}
+.pbtn[aria-pressed="true"] b{color:#fff}
+.mapback{position:absolute;right:12px;top:12px;border:0;background:var(--paper);border-radius:999px;padding:10px 16px;font-size:15px;font-weight:500;box-shadow:var(--shadow)}
+.maptitle{position:absolute;left:18px;top:14px;font-size:20px;font-weight:800;pointer-events:none;letter-spacing:-.03em}
+
+/* side */
+.side{display:flex;flex-direction:column;gap:20px;min-width:0}
+.card{background:var(--paper);border-radius:28px;box-shadow:var(--shadow);padding:22px}
+.card h2{font-size:21px;margin:0 0 4px;font-weight:800;letter-spacing:-.03em}
+.eyebrow{font-size:14px;font-weight:700;color:var(--celadon);letter-spacing:.02em}
+.muted{color:var(--ink-soft);font-size:15px}
+
+.progress{display:flex;align-items:center;gap:18px}
+.ringwrap{position:relative;width:100px;height:100px;flex:none}
+.ringwrap svg{width:100px;height:100px;transform:rotate(-90deg)}
+.ringwrap .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.ringwrap .num b{font-size:30px;line-height:1;font-weight:800;color:var(--seal)}
+.ringwrap .num span{font-size:13px;color:var(--ink-soft)}
+#ringFg{transition:stroke-dashoffset 1.2s cubic-bezier(.3,.8,.3,1)}
+.rank{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--lotus);background:var(--lotus-soft);border-radius:999px;padding:4px 12px;margin-bottom:6px}
+.rank.up{animation:rankup .9s cubic-bezier(.2,1.4,.4,1)}
+@keyframes rankup{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.pstats{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;font-size:15px;color:var(--ink-soft)}
+.pstats b{font-variant-numeric:tabular-nums;color:var(--ink)}
+.nextrank{font-size:14px;color:var(--mist);margin-top:2px}
+
+/* recommend */
+.rec{perspective:1200px}
+.rec-inner{transition:transform .6s cubic-bezier(.4,.1,.2,1);transform-style:preserve-3d}
+.rec-inner.flip{transform:rotateY(90deg)}
+.rec-scene{border-radius:18px;overflow:hidden;line-height:0;margin:12px 0}
+.rec-scene svg{width:100%;height:auto}
+.rec-name{font-size:26px;font-weight:800;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;letter-spacing:-.03em}
+.rec-name small{font-size:15px;color:var(--mist);font-weight:400;letter-spacing:0}
+.why{background:var(--gold-soft);border-radius:14px;padding:10px 14px;margin:10px 0 14px;font-size:16px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:16px;padding:12px 18px;min-height:50px;font-size:17px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,background .2s;text-decoration:none;color:var(--ink)}
+.btn:active{transform:scale(.96)}
+.btn.primary{background:var(--celadon);color:#fff}
+.btn.ghost{background:var(--celadon-soft)}
+.btn.seal{background:var(--lotus);color:#fff}
+.btn.gold{background:var(--gold-soft)}
+.btn.lotus{background:var(--lotus-soft);color:var(--ink)}
+.btn.line{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.leafb{background:var(--leaf-soft)}
+.btn[aria-pressed="true"].wishbtn{background:var(--leaf);color:#fff}
+.next{display:flex;gap:12px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.next .badge{flex:none;width:44px;height:44px;border-radius:14px;background:var(--celadon-soft);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--celadon);font-size:19px}
+.next button{background:none;border:0;padding:0;text-align:left;font-size:16px}
+.next button b{font-size:18px}
+
+/* list */
+.tabs{display:flex;gap:6px;background:var(--bg);border-radius:16px;padding:5px;margin:12px 0}
+.tab{flex:1;border:0;background:transparent;border-radius:12px;padding:10px 6px;font-size:16px}
+.tab[aria-pressed="true"]{background:var(--paper);box-shadow:var(--shadow);font-weight:700}
+.search{width:100%;font-size:17px;padding:12px 16px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.list{display:flex;flex-direction:column;gap:2px;max-height:560px;overflow-y:auto;margin-top:8px;padding-right:2px}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;border:0;background:transparent;text-align:left;padding:11px 10px;border-radius:16px;transition:background .2s,transform .2s}
+.row:hover{background:var(--bg);transform:translateX(3px)}
+.row .dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;background:var(--celadon-soft);color:var(--celadon)}
+.row.v .dot{background:var(--lotus);color:#fff}
+.row.w .dot{background:var(--leaf);color:#fff}
+.row .nm{font-size:18px;font-weight:700;display:block}
+.row .ad{font-size:14px;color:var(--ink-soft);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tag{font-size:13px;border-radius:999px;padding:3px 10px;white-space:nowrap;font-weight:500}
+.tag.v{background:var(--lotus-soft);color:var(--lotus)}
+.tag.w{background:var(--leaf-soft);color:var(--leaf)}
+.empty{padding:24px 8px;text-align:center;color:var(--ink-soft)}
+
+/* section heads */
+.sec{margin-top:32px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:14px}
+.sec-head h2{font-size:28px;font-weight:800;margin:0;letter-spacing:-.04em}
+
+/* footprints */
+.trail{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
+.foot{flex:none;width:230px;scroll-snap-align:start;background:var(--paper);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;border:0;padding:0;text-align:left;transition:transform .25s}
+.foot:hover{transform:translateY(-4px) rotate(-.5deg)}
+.foot .pic{aspect-ratio:4/3;max-width:100%;line-height:0;background:var(--bg);position:relative}
+.foot .pic svg,.foot .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.foot .pic .mini{position:absolute;right:10px;bottom:-14px;width:42px;height:42px;border-radius:50%;background:var(--paper);box-shadow:0 3px 10px rgba(0,0,0,.15);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;transform:rotate(-8deg);box-shadow:inset 0 0 0 2.5px var(--paper)}
+.foot .tx{padding:16px 16px 16px}
+.foot .dt{font-size:13px;color:var(--mist);font-variant-numeric:tabular-nums}
+.foot .fn{font-size:19px;font-weight:800;letter-spacing:-.03em}
+.foot .memo{font-size:14px;color:var(--ink-soft);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.trail-empty{background:var(--paper);border-radius:22px;padding:28px 22px;text-align:center;color:var(--ink-soft);box-shadow:var(--shadow);width:100%}
+
+/* stamp book */
+.regions{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px}
+.rbox{background:var(--paper);border-radius:24px;padding:20px;box-shadow:var(--shadow)}
+.rbox h3{margin:0;font-size:19px;font-weight:800;display:flex;justify-content:space-between;align-items:baseline;letter-spacing:-.03em}
+.rbox h3 small{font-size:15px;color:var(--ink-soft);font-weight:400;font-variant-numeric:tabular-nums}
+.rbar{height:8px;border-radius:8px;background:var(--bg);margin:10px 0 14px;overflow:hidden}
+.rbar i{display:block;height:100%;background:linear-gradient(90deg,var(--lotus),var(--seal));border-radius:8px;transition:width 1s cubic-bezier(.3,.8,.3,1)}
+.seals{display:flex;flex-wrap:wrap;gap:10px 8px}
+.st{width:62px;border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12.5px;color:var(--ink-soft);line-height:1.25;text-align:center}
+.st .s{width:50px;height:50px;border-radius:50%;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;color:var(--mist);transition:transform .3s}
+.st:hover .s{transform:rotate(-6deg) scale(1.06)}
+.st.v .s{border:0;background:var(--lotus-soft);border-radius:50%}
+.st.v{color:var(--ink);font-weight:700}
+.st.w .s{border-style:solid;border-color:var(--leaf);color:var(--leaf);background:var(--leaf-soft)}
+.st.fresh .s{animation:stamp .7s cubic-bezier(.2,1.4,.4,1)}
+@keyframes stamp{0%{transform:scale(2.2) rotate(-25deg);opacity:0}60%{transform:scale(.9) rotate(-2deg);opacity:1}100%{transform:scale(1) rotate(-4deg)}}
+
+.mk .in.bloom{animation:bloom 1.1s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes bloom{0%{transform:scale(.1) rotate(-120deg);opacity:0}60%{transform:scale(1.5) rotate(8deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:16px}
+.course{background:var(--paper);border-radius:24px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.course h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.03em;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.course h3 small{font-size:15px;font-weight:500;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.course p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+.course .cb{display:flex;flex-wrap:wrap;gap:6px}
+.course .cb button{border:0;border-radius:999px;padding:6px 12px 6px 8px;font-size:14.5px;background:var(--bg);display:inline-flex;align-items:center;gap:5px}
+.course .cb button.v{background:var(--lotus-soft);font-weight:700}
+.course .cbar{height:6px;border-radius:6px;background:var(--bg);overflow:hidden}
+.course .cbar i{display:block;height:100%;background:linear-gradient(90deg,var(--lotus-2),var(--lotus));transition:width 1s}
+.course.done{background:linear-gradient(160deg,var(--lotus-soft),var(--paper) 60%)}
+.course .done-badge{position:absolute;right:16px;top:-6px;background:var(--lotus);color:#fff;font-size:13px;font-weight:700;padding:10px 12px 6px;border-radius:0 0 12px 12px}
+.addbtn{width:100%;margin-top:10px}
+.mapcard.picking{box-shadow:0 0 0 4px var(--lotus),var(--shadow)}
+.mapcard.picking #map{cursor:crosshair}
+.mapcard.picking .mk{pointer-events:none}
+.pickbar{position:absolute;left:10px;right:10px;top:52px;z-index:3;background:var(--ink);color:var(--paper);border-radius:18px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:15px;animation:rise .4s ease both}
+.pickbar button{border:0;border-radius:999px;background:var(--paper);color:var(--ink);padding:8px 14px;font-size:14px;flex:none}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:15px;font-weight:700}
+.field input,.field select{font-size:17px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.locbox{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--bg);border-radius:16px;padding:12px 14px}
+.locbox.ok{background:var(--leaf-soft)}
+.danger{color:var(--seal)}
+.fontbtn{position:absolute;right:18px;top:18px;z-index:3;border:0;border-radius:999px;background:color-mix(in srgb,var(--paper) 92%,transparent);box-shadow:var(--shadow);padding:8px 14px;font-size:15px;font-weight:700}
+.fontbtn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.bloomfx{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;pointer-events:none;background:radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--paper) 92%,transparent) 0,color-mix(in srgb,var(--paper) 70%,transparent) 30%,transparent 62%);animation:bfIn .35s ease both}
+.bloomfx.out{animation:bfOut .6s ease forwards}
+@keyframes bfIn{from{opacity:0}}@keyframes bfOut{to{opacity:0;transform:scale(.92) translateY(10px)}}
+.bloomfx svg{width:min(240px,62vw);height:auto;overflow:visible}
+.bloomfx .pt{transform-box:fill-box;transform-origin:50% 100%;transform:rotate(var(--r)) scale(.02);opacity:0;animation:petal .9s cubic-bezier(.2,1.25,.4,1) var(--d) forwards}
+@keyframes petal{to{transform:rotate(var(--r)) scale(1);opacity:1}}
+.bloomfx .lf{transform-box:fill-box;transform-origin:50% 50%;transform:scaleX(0);animation:leaf .7s cubic-bezier(.2,1.2,.4,1) forwards}
+@keyframes leaf{to{transform:scaleX(1)}}
+.bloomfx .sd{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:seed .5s cubic-bezier(.2,1.6,.4,1) 1.25s forwards}
+@keyframes seed{to{transform:scale(1)}}
+.bloomfx .sp{opacity:0;animation:spark 1.4s ease 1.3s forwards}
+@keyframes spark{40%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+.bloomfx p{margin:0;font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.03em;opacity:0;animation:rise .6s ease 1.35s forwards;text-align:center;padding:0 20px}
+.loginbar{margin-top:16px;background:var(--paper);border-radius:22px;box-shadow:var(--shadow);padding:16px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:16px;line-height:1.5;border:2px solid var(--celadon-soft)}
+.loginbar b{font-size:17px}
+.linkbtn{border:0;background:none;color:var(--celadon);text-decoration:underline;padding:0;font-size:14px}
+footer{margin-top:32px;color:var(--mist);font-size:14px;text-align:center}
+
+/* sheet */
+.backdrop{position:fixed;inset:0;background:rgba(15,22,20,.45);z-index:40;opacity:0;transition:opacity .35s}
+.backdrop.on{opacity:1}
+.sheet{position:fixed;z-index:41;left:50%;bottom:0;width:min(640px,100%);max-height:92vh;overflow-y:auto;background:var(--paper);border-radius:28px 28px 0 0;transform:translate(-50%,100%);transition:transform .5s cubic-bezier(.2,.9,.25,1);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet.on{transform:translate(-50%,0)}
+@media (min-width:760px){.sheet{bottom:auto;top:50%;border-radius:28px;transform:translate(-50%,-40%) scale(.96);opacity:0;transition:transform .5s cubic-bezier(.2,.9,.25,1),opacity .35s}.sheet.on{transform:translate(-50%,-50%) scale(1);opacity:1}}
+.sheet-scene{position:relative;line-height:0}
+.sheet-scene svg{width:100%;height:auto}
+.closex{position:absolute;right:max(14px,env(safe-area-inset-right,0px));top:14px;width:48px;height:48px;border-radius:50%;border:0;background:color-mix(in srgb,var(--paper) 88%,transparent);font-size:22px;line-height:1;z-index:2}
+.bigseal{position:absolute;right:18px;bottom:26px;width:112px;height:112px;border-radius:50%;background:var(--paper);color:var(--lotus);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;box-shadow:0 8px 22px rgba(0,0,0,.18);transform:rotate(-6deg);z-index:2;text-align:center}
+.bigseal::before{content:"";position:absolute;inset:6px;border-radius:50%;border:2px dashed var(--lotus-2)}
+.bigseal svg{margin-top:-2px}
+.bigseal b{font-size:14.5px;font-weight:800;line-height:1.25;letter-spacing:-.02em}
+.bigseal .bs-date{font-size:11.5px;font-weight:800;line-height:1;color:#fff;background:var(--lotus);border-radius:999px;padding:5px 9px;margin-top:3px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bigseal.go{animation:bigstamp .8s cubic-bezier(.2,1.3,.4,1)}
+@keyframes bigstamp{0%{transform:scale(2.2) rotate(-30deg);opacity:0}55%{transform:scale(.9) rotate(-4deg);opacity:1}75%{transform:scale(1.05) rotate(-8deg)}100%{transform:scale(1) rotate(-6deg)}}
+.splat{position:absolute;right:12px;bottom:20px;width:124px;height:124px;border-radius:50%;border:3px solid var(--lotus);opacity:0;pointer-events:none;z-index:1}
+.splat.go{animation:splat .8s ease-out .3s}
+@keyframes splat{from{transform:scale(.6);opacity:.7}to{transform:scale(1.9);opacity:0}}
+.sheet-body{padding:22px max(22px,env(safe-area-inset-left,0px)) 28px;display:flex;flex-direction:column;gap:18px}
+.sheet h2{font-size:34px;font-weight:800;margin:0;line-height:1.15;letter-spacing:-.04em}
+.sheet h2 small{font-size:18px;color:var(--mist);font-weight:400;margin-left:8px;letter-spacing:0}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.meta span{background:var(--bg);border-radius:999px;padding:4px 12px;font-size:14px;color:var(--ink-soft)}
+.desc{margin:0;font-size:18px}
+.info{display:grid;gap:12px;background:var(--bg);border-radius:18px;padding:16px}
+.info .k{font-size:14px;color:var(--ink-soft)}
+.info .v{font-size:18px;user-select:all}
+.phone{font-size:26px;font-weight:800;letter-spacing:0;font-variant-numeric:tabular-nums;user-select:all}
+.phoneline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.actions .btn{min-height:60px;font-size:18px}
+.vdate{display:flex;align-items:center;gap:12px;background:var(--lotus-soft);border-radius:18px;padding:12px 14px}
+.vd-ic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center}
+.vd-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.3}
+.vd-tx small{font-size:13px;color:var(--ink-soft)}
+.vd-tx b{font-size:18px;font-weight:800;letter-spacing:-.02em}
+.vd-ch{position:relative;flex:none;font-size:14px;font-weight:700;color:var(--lotus);background:var(--paper);border-radius:999px;padding:8px 14px;cursor:pointer;overflow:hidden}
+.vd-ch input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+textarea{width:100%;min-height:90px;font-size:17px;padding:12px 14px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.near{display:flex;flex-wrap:wrap;gap:8px}
+.near button{border:0;box-shadow:inset 0 0 0 1.5px var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:15px}
+.sec-t{font-weight:800;font-size:18px;margin:0 0 8px;letter-spacing:-.03em}
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.photos .ph{position:relative;aspect-ratio:1;max-width:100%;border-radius:14px;overflow:hidden;background:var(--bg);border:0;padding:0}
+.photos .ph img{width:100%;height:100%;object-fit:cover;display:block;animation:rise .5s ease both}
+.photos .rm{position:absolute;right:6px;top:6px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:16px;line-height:1}
+.upl{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;aspect-ratio:1;border-radius:14px;box-shadow:inset 0 0 0 2px var(--line);color:var(--ink-soft);font-size:14px;cursor:pointer;background:var(--bg)}
+.upl b{font-size:28px;font-weight:400;color:var(--lotus);line-height:1}
+.upl input{position:absolute;width:1px;height:1px;opacity:0}
+.note{font-size:14px;color:var(--mist)}
+
+.lightbox{position:fixed;inset:0;z-index:70;background:rgba(10,14,13,.92);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));animation:fade .3s ease}
+.lightbox img{max-width:100%;max-height:100%;border-radius:12px}
+@keyframes fade{from{opacity:0}}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--ink);color:var(--paper);padding:14px 22px;border-radius:18px;font-size:17px;z-index:60;transition:transform .45s cubic-bezier(.2,1.2,.4,1);max-width:calc(100% - 32px);text-align:center;box-shadow:var(--shadow)}
+.toast.on{transform:translate(-50%,0)}
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+    <div>
+      <span class="greet" id="greet">주유니, 반가워요</span>
+      <h1><span class="yu">주유니</span>의 사찰기행</h1>
+      <p class="sub" id="sub">팔도의 산사, 한 곳 한 곳 연꽃 피우며 다녀요</p>
+      <div class="saying" id="sayBox" role="button" tabindex="0" title="눌러서 다른 말 보기" style="cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20c-4-2-7-5-7-9 2 0 4 1 5 3-1-3 0-7 2-9 2 2 3 6 2 9 1-2 3-3 5-3 0 4-3 7-7 9z" fill="var(--lotus)"/></svg><span id="saying"></span></div>
+    </div>
+    <div class="seasons" role="group" aria-label="계절 바꾸기">
+      <button class="sz" data-s="spring" aria-pressed="false"><b>春</b><span>봄</span></button>
+      <button class="sz" data-s="summer" aria-pressed="false"><b>夏</b><span>여름</span></button>
+      <button class="sz" data-s="autumn" aria-pressed="false"><b>秋</b><span>가을</span></button>
+      <button class="sz" data-s="winter" aria-pressed="false"><b>冬</b><span>겨울</span></button>
+    </div>
+  </header>
+
+  <div class="loginbar" id="loginbar" hidden></div>
+  <nav class="chips" id="chips" aria-label="지역 선택"></nav>
+  <div class="chips feat" id="feat" role="group" aria-label="골라보기"></div>
+
+  <div class="main">
+    <section class="mapcard" aria-label="전국 사찰 지도">
+      <div class="maptitle" id="maptitle">전국</div>
+      <svg id="map" role="img" aria-label="대한민국 지도 위 사찰 위치"></svg>
+      <button class="mapback" id="mapback" hidden>← 전국 보기</button>
+      <div class="zoomctl"><button id="zin" aria-label="지도 확대">＋</button><button id="zout" aria-label="지도 축소">－</button></div>
+      <div class="pickbar" id="pickbar" hidden><span>추가할 절 자리를 지도에서 눌러주세요.<br><small style="opacity:.75">위 지역 버튼으로 확대하면 더 정확해요</small></span><button id="pickCancel">취소</button></div>
+      <div class="maplegend" role="group" aria-label="지도에 보일 사찰">
+        <button class="lg" data-f="all" aria-pressed="true"><i style="background:var(--violet);border-radius:50%;box-shadow:0 0 0 2px var(--paper)"></i>전체</button>
+        <button class="lg" data-f="v" aria-pressed="false"><span class="ic" data-ic="v"></span>다녀온 곳</button>
+        <button class="lg" data-f="w" aria-pressed="false"><span class="ic" data-ic="w"></span>가고 싶은 곳</button>
+      </div>
+    </section>
+
+    <div class="side">
+      <section class="card">
+        <div class="progress">
+          <div class="ringwrap">
+            <svg viewBox="0 0 100 100"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--lotus)"/><stop offset="1" stop-color="var(--seal)"/></linearGradient></defs><circle cx="50" cy="50" r="42" fill="none" stroke="var(--bg)" stroke-width="10"/><circle id="ringFg" cx="50" cy="50" r="42" fill="none" stroke="url(#rg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9"/></svg>
+            <div class="num"><b id="pNum">0</b><span id="pOf">곳</span></div>
+          </div>
+          <div style="min-width:0">
+            <span class="rank" id="rank">첫걸음 순례자</span>
+            <h2 id="pTitle">첫 연꽃을 기다리고 있어요</h2>
+            <div class="nextrank" id="nextRank"></div>
+            <div class="pstats"><button class="pbtn" data-f="v" aria-pressed="false"><span class="ic" data-ic="v"></span>다녀온 곳 <b id="pV">0</b></button><button class="pbtn" data-f="w" aria-pressed="false"><span class="ic" data-ic="w"></span>가고 싶은 곳 <b id="pW">0</b></button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card rec" aria-live="polite">
+        <div class="rec-inner" id="recInner"></div>
+      </section>
+
+      <section class="card">
+        <h2 id="listTitle">전국 사찰</h2>
+        <div class="tabs" role="group" aria-label="목록 보기">
+          <button class="tab" data-f="all" aria-pressed="true">전체</button>
+          <button class="tab" data-f="w" aria-pressed="false">가고 싶은 곳</button>
+          <button class="tab" data-f="v" aria-pressed="false">다녀온 곳</button>
+        </div>
+        <input class="search" id="q" type="search" placeholder="사찰 이름이나 지역으로 찾기" aria-label="사찰 찾기">
+        <button class="btn line addbtn" id="addBtn">＋ 목록에 없는 절 직접 추가하기</button>
+        <div class="list" id="list"></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="sec" aria-label="여행 일기">
+    <div class="sec-head"><h2>여행 일기</h2></div>
+    <div class="trail" id="trail"></div>
+  </section>
+
+  <section class="sec" aria-label="순례 코스">
+    <div class="sec-head"><h2>순례 코스 도전</h2><span class="muted">유명한 순례길을 하나씩 완주해 보세요</span></div>
+    <div class="courses" id="courses"></div>
+  </section>
+
+  <section class="sec" aria-label="내가 피운 연꽃">
+    <div class="sec-head"><h2>내가 피운 연꽃</h2><span class="muted">연꽃을 누르면 이야기가 열려요</span></div>
+    <div class="regions" id="regions"></div>
+  </section>
+
+  <footer>전화번호와 정보는 바뀔 수 있어요.<br>가시기 전에 한 번 전화로 확인해 보세요.<div id="acct" style="margin-top:10px"></div></footer>
+</div>
+
+<div class="backdrop" id="backdrop" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+/* ============================================================
+   여기에 Firebase 설정을 붙여넣으세요.
+   Firebase 콘솔에서 복사한 { apiKey: ... } 부분을 null 자리에 넣으면 돼요.
+   null 그대로 두면 이 기기 안에만 저장돼요.
+   ============================================================ */
+const FIREBASE_CONFIG = null;
+</script>
+<script>
+const GEO = [{"k":"kr-4194","r":"jj","p":[[[126.964,33.496],[126.945,33.494],[126.941,33.506],[126.952,33.525],[126.964,33.496]],[[128.197,34.686],[128.174,34.694],[128.175,34.711],[128.196,34.707],[128.197,34.686]],[[128.486,34.809],[128.508,34.771],[128.475,34.759],[128.462,34.786],[128.477,34.816],[128.486,34.809]],[[128.197,34.833],[128.187,34.826],[128.169,34.847],[128.184,34.857],[128.227,34.849],[128.197,34.833]],[[128.523,34.923],[128.519,34.922],[128.513,34.963],[128.533,34.972],[128.523,34.923]],[[128.646,34.98],[128.632,34.971],[128.612,34.983],[128.632,35.01],[128.651,35.019],[128.646,34.98]],[[126.471,35.824],[126.486,35.816],[126.452,35.807],[126.442,35.832],[126.471,35.824]],[[126.364,36.332],[126.339,36.328],[126.353,36.356],[126.367,36.337],[126.364,36.332]],[[126.432,36.381],[126.45,36.355],[126.387,36.369],[126.406,36.375],[126.432,36.381]],[[126.287,37.269],[126.325,37.258],[126.322,37.245],[126.282,37.26],[126.287,37.269]],[[126.436,37.372],[126.412,37.367],[126.399,37.392],[126.403,37.407],[126.438,37.383],[126.436,37.372]],[[126.468,37.514],[126.432,37.522],[126.459,37.54],[126.473,37.534],[126.468,37.514]],[[126.338,37.527],[126.311,37.553],[126.348,37.537],[126.37,37.528],[126.338,37.527]],[[126.261,37.628],[126.239,37.636],[126.227,37.651],[126.253,37.653],[126.261,37.628]],[[126.201,37.675],[126.195,37.656],[126.158,37.674],[126.195,37.684],[126.201,37.675]]]},{"k":"kr-kg","r":"gg","p":[[[126.159,37.232],[126.122,37.211],[126.102,37.229],[126.089,37.226],[126.105,37.268],[126.159,37.232]],[[126.478,37.241],[126.458,37.231],[126.436,37.239],[126.436,37.264],[126.461,37.28],[126.484,37.279],[126.498,37.261],[126.478,37.241]],[[126.574,37.279],[126.609,37.26],[126.614,37.233],[126.563,37.2],[126.539,37.198],[126.56,37.239],[126.556,37.266],[126.541,37.283],[126.574,37.279]],[[125.693,37.654],[125.688,37.652],[125.68,37.678],[125.706,37.672],[125.693,37.654]],[[126.37,37.658],[126.35,37.657],[126.282,37.699],[126.301,37.733],[126.324,37.746],[126.343,37.704],[126.379,37.679],[126.37,37.658]],[[126.276,37.812],[126.296,37.803],[126.333,37.8],[126.336,37.775],[126.318,37.762],[126.255,37.768],[126.224,37.761],[126.22,37.771],[126.246,37.812],[126.276,37.812]],[[124.714,37.81],[124.685,37.804],[124.677,37.825],[124.709,37.847],[124.726,37.837],[124.714,37.81]],[[126.417,37.652],[126.369,37.719],[126.369,37.785],[126.407,37.82],[126.425,37.824],[126.471,37.79],[126.504,37.777],[126.522,37.751],[126.514,37.723],[126.528,37.696],[126.528,37.652],[126.542,37.631],[126.529,37.625],[126.518,37.604],[126.494,37.598],[126.476,37.611],[126.463,37.604],[126.41,37.602],[126.37,37.631],[126.401,37.637],[126.417,37.652]],[[124.65,37.973],[124.705,37.989],[124.733,37.98],[124.742,37.955],[124.678,37.952],[124.705,37.933],[124.685,37.92],[124.644,37.924],[124.614,37.945],[124.624,37.98],[124.65,37.973]],[[126.961,36.905],[127.0,36.928],[127.007,36.953],[126.994,36.967],[127.039,36.982],[127.042,36.994],[126.982,36.98],[126.973,36.97],[126.976,36.939],[126.946,36.926],[126.912,36.93],[126.874,36.948],[126.838,36.976],[126.824,37.003],[126.884,37.008],[126.871,37.021],[126.911,37.014],[126.883,37.069],[126.891,37.096],[126.87,37.091],[126.859,37.041],[126.801,37.038],[126.755,37.049],[126.753,37.101],[126.778,37.133],[126.811,37.144],[126.864,37.15],[126.865,37.179],[126.83,37.159],[126.807,37.165],[126.802,37.185],[126.759,37.165],[126.724,37.134],[126.703,37.125],[126.686,37.139],[126.707,37.165],[126.668,37.162],[126.671,37.186],[126.707,37.2],[126.716,37.216],[126.68,37.218],[126.659,37.254],[126.71,37.262],[126.752,37.248],[126.767,37.254],[126.767,37.232],[126.793,37.223],[126.802,37.254],[126.819,37.275],[126.871,37.268],[126.86,37.282],[126.823,37.296],[126.765,37.298],[126.733,37.306],[126.69,37.332],[126.688,37.344],[126.72,37.377],[126.772,37.396],[126.796,37.443],[126.77,37.464],[126.759,37.507],[126.7,37.552],[126.604,37.549],[126.561,37.608],[126.545,37.672],[126.531,37.755],[126.548,37.77],[126.603,37.755],[126.649,37.765],[126.667,37.746],[126.662,37.672],[126.692,37.652],[126.755,37.638],[126.679,37.686],[126.701,37.743],[126.687,37.774],[126.692,37.837],[126.667,37.828],[126.66,37.914],[126.666,37.938],[126.722,37.954],[126.762,37.979],[126.847,38.082],[126.92,38.134],[126.954,38.201],[126.966,38.213],[127.036,38.18],[127.082,38.12],[127.095,38.121],[127.14,38.087],[127.177,38.074],[127.19,38.09],[127.19,38.123],[127.2,38.139],[127.213,38.116],[127.256,38.109],[127.291,38.138],[127.314,38.134],[127.296,38.103],[127.297,38.084],[127.328,38.065],[127.366,38.057],[127.408,38.069],[127.445,38.065],[127.462,38.037],[127.466,37.99],[127.479,37.964],[127.504,37.949],[127.55,37.949],[127.564,37.92],[127.602,37.91],[127.626,37.881],[127.62,37.84],[127.538,37.792],[127.535,37.746],[127.547,37.71],[127.518,37.683],[127.53,37.671],[127.557,37.678],[127.552,37.638],[127.54,37.605],[127.562,37.59],[127.616,37.593],[127.723,37.547],[127.805,37.534],[127.831,37.509],[127.769,37.448],[127.768,37.403],[127.706,37.299],[127.661,37.212],[127.607,37.131],[127.576,37.102],[127.518,37.014],[127.493,37.0],[127.468,37.01],[127.431,36.967],[127.39,36.944],[127.38,36.915],[127.305,36.889],[127.26,36.879],[127.213,36.884],[127.174,36.91],[127.131,36.926],[127.048,36.897],[126.961,36.905]]]},{"k":"kr-cb","r":"jl","p":[[[126.307,35.617],[126.306,35.603],[126.258,35.571],[126.257,35.596],[126.276,35.613],[126.307,35.617]],[[127.878,36.007],[127.918,35.951],[127.914,35.887],[127.877,35.855],[127.867,35.834],[127.818,35.813],[127.77,35.802],[127.751,35.769],[127.707,35.735],[127.692,35.678],[127.664,35.632],[127.644,35.57],[127.63,35.547],[127.629,35.522],[127.655,35.513],[127.671,35.466],[127.67,35.44],[127.694,35.414],[127.688,35.386],[127.647,35.346],[127.638,35.294],[127.617,35.277],[127.56,35.314],[127.496,35.333],[127.46,35.317],[127.431,35.291],[127.33,35.283],[127.293,35.284],[127.261,35.301],[127.193,35.294],[127.164,35.28],[127.127,35.284],[127.102,35.305],[127.104,35.338],[127.078,35.376],[127.086,35.405],[127.066,35.43],[127.037,35.428],[127.02,35.411],[127.011,35.383],[126.98,35.383],[126.933,35.434],[126.903,35.455],[126.867,35.462],[126.85,35.446],[126.817,35.449],[126.792,35.43],[126.792,35.403],[126.77,35.384],[126.773,35.363],[126.752,35.34],[126.69,35.314],[126.595,35.294],[126.57,35.301],[126.584,35.392],[126.555,35.398],[126.437,35.371],[126.418,35.394],[126.426,35.418],[126.47,35.499],[126.493,35.526],[126.525,35.535],[126.594,35.543],[126.623,35.568],[126.643,35.573],[126.679,35.538],[126.693,35.535],[126.67,35.589],[126.655,35.596],[126.513,35.577],[126.464,35.602],[126.468,35.639],[126.491,35.649],[126.53,35.683],[126.597,35.714],[126.625,35.746],[126.629,35.775],[126.662,35.793],[126.733,35.792],[126.771,35.775],[126.782,35.76],[126.791,35.791],[126.701,35.84],[126.72,35.863],[126.785,35.862],[126.806,35.867],[126.819,35.888],[126.837,35.893],[126.806,35.91],[126.733,35.885],[126.612,35.89],[126.609,35.931],[126.57,35.946],[126.526,35.94],[126.522,35.971],[126.744,35.989],[126.802,36.021],[126.869,36.047],[126.871,36.062],[126.812,36.047],[126.857,36.092],[126.961,36.106],[127.065,36.133],[127.102,36.126],[127.093,36.083],[127.114,36.056],[127.227,36.078],[127.276,36.09],[127.307,36.121],[127.338,36.098],[127.383,36.033],[127.43,36.016],[127.433,35.987],[127.49,35.981],[127.571,35.993],[127.619,36.03],[127.637,36.014],[127.652,36.023],[127.684,36.0],[127.753,35.975],[127.823,36.004],[127.852,35.987],[127.878,36.007]]]},{"k":"kr-kn","r":"gs","p":[[[128.272,34.632],[128.294,34.639],[128.286,34.622],[128.236,34.611],[128.225,34.633],[128.239,34.652],[128.272,34.632]],[[128.379,34.823],[128.428,34.828],[128.441,34.807],[128.437,34.78],[128.407,34.763],[128.386,34.792],[128.369,34.796],[128.38,34.81],[128.332,34.826],[128.352,34.836],[128.379,34.823]],[[128.242,34.8],[128.206,34.815],[128.227,34.838],[128.26,34.815],[128.242,34.8]],[[128.832,34.994],[128.801,35.049],[128.815,35.061],[128.843,35.047],[128.832,34.994]],[[129.269,35.316],[129.25,35.266],[129.256,35.247],[129.229,35.201],[129.199,35.164],[129.119,35.239],[129.112,35.261],[129.093,35.271],[129.044,35.264],[129.011,35.238],[129.0,35.179],[128.963,35.133],[128.958,35.137],[128.919,35.082],[128.905,35.081],[128.898,35.121],[128.882,35.082],[128.792,35.083],[128.781,35.111],[128.772,35.083],[128.739,35.088],[128.728,35.105],[128.701,35.096],[128.701,35.14],[128.688,35.14],[128.68,35.116],[128.638,35.15],[128.618,35.143],[128.618,35.185],[128.602,35.214],[128.578,35.189],[128.598,35.131],[128.627,35.091],[128.625,35.068],[128.652,35.061],[128.603,35.057],[128.58,35.088],[128.526,35.104],[128.478,35.099],[128.481,35.075],[128.389,35.049],[128.372,35.007],[128.471,35.05],[128.488,35.051],[128.5,35.009],[128.479,34.99],[128.42,34.983],[128.44,34.965],[128.433,34.891],[128.451,34.886],[128.461,34.904],[128.474,34.89],[128.436,34.843],[128.383,34.839],[128.384,34.855],[128.416,34.863],[128.341,34.873],[128.325,34.897],[128.358,34.91],[128.335,34.947],[128.302,34.908],[128.279,34.907],[128.258,34.93],[128.224,34.938],[128.209,34.921],[128.207,34.891],[128.139,34.892],[128.121,34.9],[128.118,34.924],[128.064,34.928],[128.051,34.94],[128.056,34.962],[128.054,35.036],[128.069,35.083],[128.025,35.036],[128.001,35.034],[128.019,34.999],[127.98,34.992],[127.954,34.979],[127.926,35.02],[127.912,34.962],[127.891,34.947],[127.844,34.95],[127.83,34.945],[127.805,34.957],[127.789,35.007],[127.727,35.063],[127.708,35.103],[127.66,35.136],[127.647,35.156],[127.643,35.209],[127.633,35.235],[127.612,35.255],[127.617,35.277],[127.638,35.294],[127.647,35.346],[127.688,35.386],[127.694,35.414],[127.67,35.44],[127.671,35.466],[127.655,35.513],[127.629,35.522],[127.63,35.547],[127.644,35.57],[127.664,35.632],[127.692,35.678],[127.707,35.735],[127.751,35.769],[127.77,35.802],[127.818,35.813],[127.867,35.834],[127.877,35.855],[127.914,35.887],[127.922,35.865],[127.961,35.843],[127.966,35.827],[128.012,35.82],[128.041,35.802],[128.099,35.801],[128.124,35.794],[128.188,35.725],[128.217,35.705],[128.204,35.659],[128.219,35.613],[128.34,35.61],[128.393,35.584],[128.421,35.579],[128.475,35.602],[128.502,35.597],[128.527,35.626],[128.55,35.64],[128.558,35.585],[128.583,35.56],[128.615,35.544],[128.689,35.553],[128.753,35.531],[128.79,35.53],[128.823,35.551],[128.851,35.557],[128.876,35.579],[128.913,35.591],[128.98,35.572],[129.008,35.579],[129.012,35.54],[128.988,35.498],[129.003,35.474],[129.064,35.466],[129.09,35.45],[129.133,35.41],[129.208,35.372],[129.215,35.345],[129.236,35.327],[129.269,35.316]],[[128.002,34.913],[128.023,34.906],[128.014,34.869],[128.036,34.892],[128.059,34.88],[128.067,34.852],[128.082,34.835],[128.027,34.843],[128.002,34.837],[127.972,34.845],[127.964,34.86],[128.002,34.913]],[[128.01,34.709],[127.975,34.7],[127.954,34.76],[127.924,34.76],[127.906,34.713],[127.868,34.722],[127.858,34.76],[127.831,34.834],[127.829,34.869],[127.862,34.896],[127.867,34.918],[127.902,34.94],[127.938,34.914],[127.928,34.888],[127.906,34.869],[127.914,34.844],[127.95,34.825],[127.962,34.807],[128.029,34.822],[128.07,34.815],[128.075,34.804],[128.064,34.77],[128.065,34.737],[128.051,34.729],[128.06,34.708],[128.04,34.696],[128.01,34.709]],[[128.686,34.808],[128.68,34.787],[128.657,34.757],[128.694,34.736],[128.678,34.725],[128.606,34.706],[128.584,34.705],[128.618,34.725],[128.598,34.74],[128.604,34.767],[128.574,34.754],[128.56,34.782],[128.591,34.791],[128.605,34.835],[128.58,34.832],[128.529,34.808],[128.492,34.85],[128.489,34.869],[128.508,34.891],[128.537,34.904],[128.584,34.91],[128.627,34.892],[128.645,34.897],[128.616,34.922],[128.611,34.955],[128.624,34.954],[128.694,34.986],[128.682,35.005],[128.703,35.033],[128.72,35.027],[128.725,35.009],[128.719,34.972],[128.724,34.954],[128.735,34.936],[128.714,34.876],[128.747,34.886],[128.747,34.857],[128.734,34.838],[128.72,34.842],[128.742,34.791],[128.716,34.793],[128.686,34.808]]]},{"k":"kr-2685","r":"jl","p":[[[126.343,33.957],[126.327,33.945],[126.318,33.933],[126.303,33.954],[126.343,33.957]],[[127.296,34.061],[127.297,34.038],[127.324,34.006],[127.295,34.014],[127.279,34.045],[127.296,34.061]],[[125.137,34.051],[125.123,34.051],[125.092,34.072],[125.102,34.096],[125.122,34.084],[125.137,34.051]],[[126.568,34.169],[126.593,34.17],[126.616,34.157],[126.582,34.157],[126.537,34.127],[126.507,34.139],[126.515,34.169],[126.548,34.179],[126.568,34.169]],[[126.665,34.119],[126.639,34.128],[126.645,34.197],[126.671,34.19],[126.662,34.166],[126.68,34.146],[126.665,34.119]],[[126.762,34.184],[126.747,34.189],[126.764,34.212],[126.77,34.199],[126.762,34.184]],[[126.92,34.167],[126.887,34.151],[126.849,34.174],[126.861,34.202],[126.899,34.21],[126.925,34.185],[126.92,34.167]],[[126.589,34.179],[126.569,34.179],[126.549,34.195],[126.56,34.235],[126.612,34.218],[126.617,34.204],[126.589,34.179]],[[127.261,34.217],[127.223,34.211],[127.23,34.233],[127.258,34.25],[127.261,34.217]],[[126.054,34.254],[126.065,34.242],[126.056,34.226],[126.043,34.238],[126.054,34.254]],[[126.033,34.315],[126.088,34.308],[126.089,34.289],[126.049,34.28],[126.022,34.296],[126.033,34.315]],[[126.984,34.307],[126.956,34.316],[126.959,34.332],[126.997,34.339],[127.009,34.32],[126.984,34.307]],[[125.996,34.341],[126.037,34.339],[126.058,34.32],[125.997,34.327],[125.996,34.341]],[[126.844,34.35],[126.893,34.341],[126.877,34.312],[126.841,34.303],[126.82,34.326],[126.789,34.321],[126.758,34.336],[126.803,34.339],[126.844,34.35]],[[127.046,34.358],[127.077,34.359],[127.097,34.338],[127.074,34.334],[127.039,34.313],[127.049,34.331],[127.024,34.348],[126.992,34.356],[127.029,34.38],[127.046,34.358]],[[126.947,34.404],[126.941,34.374],[126.907,34.355],[126.887,34.363],[126.884,34.385],[126.868,34.371],[126.867,34.402],[126.931,34.395],[126.947,34.404]],[[127.271,34.381],[127.253,34.384],[127.25,34.402],[127.259,34.405],[127.271,34.381]],[[126.86,34.399],[126.833,34.397],[126.793,34.379],[126.776,34.355],[126.767,34.38],[126.753,34.387],[126.782,34.427],[126.835,34.438],[126.836,34.419],[126.86,34.399]],[[127.043,34.459],[127.063,34.45],[127.074,34.425],[127.064,34.405],[127.056,34.424],[127.042,34.42],[127.025,34.452],[127.043,34.459]],[[127.804,34.41],[127.786,34.431],[127.802,34.46],[127.813,34.45],[127.804,34.41]],[[127.487,34.464],[127.51,34.47],[127.537,34.435],[127.494,34.414],[127.452,34.453],[127.458,34.473],[127.487,34.464]],[[126.057,34.485],[126.068,34.482],[126.039,34.461],[126.033,34.479],[126.048,34.497],[126.057,34.485]],[[127.474,34.516],[127.5,34.502],[127.494,34.485],[127.456,34.479],[127.444,34.495],[127.459,34.498],[127.436,34.517],[127.451,34.541],[127.474,34.516]],[[127.78,34.489],[127.742,34.502],[127.707,34.534],[127.748,34.551],[127.79,34.504],[127.78,34.489]],[[127.668,34.575],[127.694,34.575],[127.654,34.554],[127.637,34.568],[127.658,34.586],[127.668,34.575]],[[127.559,34.616],[127.566,34.606],[127.543,34.596],[127.527,34.618],[127.559,34.616]],[[125.857,34.621],[125.853,34.603],[125.82,34.596],[125.802,34.621],[125.857,34.621]],[[126.038,34.57],[126.02,34.572],[126.017,34.606],[126.028,34.634],[126.06,34.584],[126.038,34.57]],[[125.977,34.629],[125.977,34.619],[125.946,34.636],[125.968,34.642],[125.977,34.629]],[[126.157,34.657],[126.174,34.664],[126.2,34.638],[126.128,34.614],[126.129,34.641],[126.116,34.65],[126.149,34.672],[126.157,34.657]],[[125.434,34.696],[125.46,34.687],[125.408,34.629],[125.393,34.66],[125.413,34.692],[125.434,34.696]],[[125.204,34.715],[125.214,34.715],[125.207,34.688],[125.186,34.662],[125.204,34.715]],[[125.999,34.678],[125.977,34.657],[125.929,34.672],[125.916,34.687],[125.98,34.726],[126.001,34.704],[125.999,34.678]],[[126.118,34.77],[126.174,34.744],[126.178,34.713],[126.16,34.703],[126.138,34.724],[126.111,34.718],[126.069,34.77],[126.118,34.77]],[[126.158,34.764],[126.146,34.762],[126.093,34.788],[126.149,34.808],[126.169,34.792],[126.158,34.764]],[[126.142,34.879],[126.142,34.833],[126.119,34.824],[126.116,34.803],[126.094,34.809],[126.064,34.843],[126.094,34.858],[126.113,34.853],[126.113,34.871],[126.142,34.879]],[[127.722,34.897],[127.745,34.892],[127.723,34.871],[127.695,34.879],[127.722,34.897]],[[126.089,34.911],[126.081,34.871],[126.055,34.859],[126.031,34.869],[125.986,34.863],[126.028,34.91],[126.052,34.908],[126.07,34.929],[126.089,34.911]],[[126.246,34.916],[126.225,34.914],[126.222,34.932],[126.253,34.934],[126.246,34.916]],[[126.276,34.969],[126.3,34.938],[126.281,34.937],[126.262,34.968],[126.276,34.969]],[[126.26,34.976],[126.245,34.976],[126.254,35.005],[126.27,34.991],[126.26,34.976]],[[126.17,35.0],[126.178,34.978],[126.146,34.966],[126.127,34.947],[126.138,34.988],[126.152,34.997],[126.105,34.995],[126.097,35.003],[126.134,35.024],[126.152,35.021],[126.17,35.0]],[[126.144,35.058],[126.174,35.053],[126.173,35.024],[126.128,35.048],[126.144,35.058]],[[126.037,35.349],[126.014,35.332],[126.006,35.344],[126.022,35.363],[126.037,35.349]],[[126.688,34.402],[126.722,34.381],[126.745,34.324],[126.771,34.292],[126.742,34.298],[126.732,34.29],[126.689,34.301],[126.696,34.321],[126.663,34.324],[126.645,34.337],[126.642,34.373],[126.654,34.395],[126.688,34.402]],[[127.245,34.464],[127.229,34.43],[127.21,34.424],[127.153,34.42],[127.118,34.437],[127.124,34.455],[127.11,34.465],[127.14,34.478],[127.204,34.487],[127.234,34.48],[127.245,34.464]],[[126.305,34.402],[126.21,34.359],[126.156,34.353],[126.143,34.364],[126.158,34.383],[126.124,34.404],[126.124,34.382],[126.103,34.403],[126.116,34.436],[126.144,34.463],[126.172,34.465],[126.196,34.503],[126.268,34.522],[126.267,34.55],[126.241,34.566],[126.264,34.576],[126.305,34.554],[126.315,34.538],[126.349,34.547],[126.38,34.498],[126.373,34.454],[126.354,34.42],[126.336,34.403],[126.309,34.424],[126.305,34.402]],[[126.1,34.559],[126.058,34.532],[126.035,34.534],[126.054,34.552],[126.031,34.557],[126.065,34.564],[126.081,34.581],[126.06,34.621],[126.068,34.626],[126.099,34.605],[126.1,34.559]],[[127.817,34.631],[127.815,34.602],[127.798,34.58],[127.775,34.584],[127.74,34.613],[127.742,34.644],[127.765,34.66],[127.776,34.691],[127.762,34.713],[127.797,34.714],[127.792,34.682],[127.817,34.631]],[[125.989,34.79],[126.007,34.781],[126.008,34.76],[125.946,34.757],[125.93,34.723],[125.907,34.719],[125.891,34.75],[125.902,34.771],[125.989,34.79]],[[126.298,34.918],[126.345,34.896],[126.32,34.881],[126.32,34.866],[126.36,34.858],[126.362,34.838],[126.342,34.822],[126.338,34.842],[126.306,34.856],[126.249,34.845],[126.231,34.855],[126.272,34.867],[126.298,34.894],[126.298,34.918]],[[126.159,35.094],[126.189,35.102],[126.216,35.104],[126.239,35.092],[126.219,35.077],[126.249,35.063],[126.261,35.024],[126.243,35.027],[126.236,35.052],[126.185,35.063],[126.159,35.094]],[[126.145,35.082],[126.114,35.059],[126.105,35.05],[126.056,35.061],[126.069,35.102],[126.099,35.113],[126.111,35.133],[126.15,35.147],[126.166,35.143],[126.128,35.121],[126.145,35.082]],[[127.805,34.957],[127.744,34.96],[127.719,34.99],[127.721,34.965],[127.7,34.931],[127.641,34.899],[127.607,34.941],[127.581,34.934],[127.576,34.897],[127.619,34.837],[127.657,34.812],[127.7,34.842],[127.757,34.841],[127.775,34.849],[127.775,34.829],[127.75,34.737],[127.742,34.725],[127.706,34.716],[127.656,34.731],[127.638,34.698],[127.624,34.698],[127.638,34.671],[127.64,34.618],[127.614,34.637],[127.572,34.647],[127.556,34.685],[127.585,34.746],[127.522,34.859],[127.528,34.88],[127.516,34.891],[127.487,34.841],[127.445,34.829],[127.382,34.828],[127.379,34.815],[127.425,34.794],[127.362,34.773],[127.366,34.754],[127.385,34.76],[127.406,34.7],[127.466,34.662],[127.487,34.637],[127.452,34.637],[127.495,34.623],[127.504,34.591],[127.484,34.577],[127.452,34.575],[127.392,34.602],[127.343,34.578],[127.358,34.554],[127.38,34.547],[127.418,34.555],[127.439,34.541],[127.392,34.505],[127.375,34.485],[127.357,34.492],[127.328,34.474],[127.344,34.445],[127.316,34.445],[127.275,34.489],[127.261,34.513],[127.223,34.547],[127.173,34.528],[127.179,34.513],[127.134,34.526],[127.13,34.564],[127.159,34.58],[127.199,34.631],[127.214,34.637],[127.208,34.604],[127.193,34.575],[127.247,34.584],[127.261,34.601],[127.261,34.63],[127.24,34.671],[127.275,34.705],[127.292,34.695],[127.289,34.677],[127.303,34.655],[127.33,34.657],[127.358,34.698],[127.332,34.741],[127.291,34.721],[127.248,34.767],[127.214,34.705],[127.185,34.687],[127.148,34.691],[127.099,34.654],[127.03,34.619],[127.01,34.613],[127.007,34.581],[126.987,34.554],[126.994,34.541],[126.939,34.496],[126.941,34.454],[126.904,34.459],[126.893,34.429],[126.898,34.418],[126.857,34.438],[126.81,34.451],[126.802,34.47],[126.808,34.553],[126.789,34.589],[126.767,34.578],[126.755,34.558],[126.766,34.523],[126.735,34.515],[126.762,34.479],[126.709,34.45],[126.727,34.433],[126.69,34.436],[126.682,34.414],[126.645,34.403],[126.63,34.389],[126.605,34.321],[126.603,34.301],[126.579,34.305],[126.533,34.292],[126.52,34.306],[126.527,34.341],[126.48,34.349],[126.488,34.38],[126.515,34.404],[126.513,34.424],[126.476,34.433],[126.484,34.47],[126.466,34.472],[126.47,34.496],[126.491,34.509],[126.541,34.513],[126.514,34.534],[126.539,34.553],[126.527,34.569],[126.508,34.554],[126.487,34.561],[126.466,34.54],[126.417,34.54],[126.391,34.534],[126.38,34.559],[126.346,34.585],[126.319,34.572],[126.295,34.589],[126.319,34.619],[126.271,34.643],[126.27,34.671],[126.289,34.726],[126.29,34.75],[126.319,34.748],[126.357,34.698],[126.344,34.678],[126.37,34.609],[126.465,34.585],[126.473,34.602],[126.435,34.607],[126.412,34.63],[126.416,34.653],[126.386,34.636],[126.377,34.679],[126.378,34.711],[126.448,34.706],[126.453,34.671],[126.536,34.623],[126.519,34.65],[126.531,34.653],[126.574,34.633],[126.602,34.633],[126.556,34.664],[126.508,34.718],[126.465,34.73],[126.436,34.728],[126.416,34.739],[126.39,34.733],[126.364,34.749],[126.392,34.769],[126.422,34.765],[126.46,34.779],[126.506,34.751],[126.535,34.746],[126.532,34.783],[126.569,34.801],[126.638,34.788],[126.631,34.801],[126.665,34.808],[126.651,34.822],[126.576,34.822],[126.576,34.855],[126.589,34.873],[126.581,34.898],[126.552,34.896],[126.54,34.875],[126.547,34.848],[126.513,34.782],[126.487,34.787],[126.501,34.808],[126.487,34.814],[126.456,34.801],[126.43,34.806],[126.419,34.792],[126.384,34.786],[126.37,34.801],[126.409,34.845],[126.409,34.874],[126.425,34.891],[126.412,34.899],[126.396,34.935],[126.398,34.951],[126.436,34.981],[126.411,34.986],[126.371,34.969],[126.377,34.938],[126.345,34.926],[126.315,34.938],[126.329,34.945],[126.301,34.973],[126.349,34.973],[126.346,34.994],[126.374,35.017],[126.367,35.038],[126.338,35.07],[126.302,35.089],[126.31,35.066],[126.288,35.053],[126.283,35.079],[126.258,35.107],[126.269,35.137],[126.328,35.123],[126.343,35.157],[126.35,35.146],[126.345,35.096],[126.362,35.077],[126.411,35.061],[126.407,35.039],[126.425,35.02],[126.451,35.067],[126.453,35.1],[126.414,35.12],[126.404,35.142],[126.364,35.188],[126.377,35.212],[126.363,35.239],[126.309,35.233],[126.32,35.244],[126.377,35.253],[126.357,35.26],[126.384,35.292],[126.377,35.311],[126.389,35.342],[126.411,35.37],[126.432,35.349],[126.458,35.345],[126.437,35.371],[126.555,35.398],[126.584,35.392],[126.57,35.301],[126.595,35.294],[126.69,35.314],[126.752,35.34],[126.773,35.363],[126.77,35.384],[126.792,35.403],[126.792,35.43],[126.817,35.449],[126.85,35.446],[126.867,35.462],[126.903,35.455],[126.933,35.434],[126.98,35.383],[127.011,35.383],[127.02,35.411],[127.037,35.428],[127.066,35.43],[127.086,35.405],[127.078,35.376],[127.104,35.338],[127.102,35.305],[127.127,35.284],[127.164,35.28],[127.193,35.294],[127.261,35.301],[127.293,35.284],[127.33,35.283],[127.431,35.291],[127.46,35.317],[127.496,35.333],[127.56,35.314],[127.617,35.277],[127.612,35.255],[127.633,35.235],[127.643,35.209],[127.647,35.156],[127.66,35.136],[127.708,35.103],[127.727,35.063],[127.789,35.007],[127.805,34.957]]]},{"k":"kr-pu","r":"gs","p":[[[129.097,35.059],[129.089,35.05],[129.047,35.08],[129.065,35.097],[129.09,35.076],[129.097,35.059]],[[129.199,35.164],[129.194,35.156],[129.12,35.15],[129.124,35.101],[129.101,35.093],[129.064,35.121],[129.038,35.098],[129.014,35.055],[128.997,35.076],[129.0,35.046],[128.985,35.054],[128.965,35.044],[128.95,35.073],[128.963,35.133],[129.0,35.179],[129.011,35.238],[129.044,35.264],[129.093,35.271],[129.112,35.261],[129.119,35.239],[129.199,35.164]]]},{"k":"kr-2688","r":"gs","p":[[[127.914,35.887],[127.918,35.951],[127.878,36.007],[127.927,36.024],[127.951,36.074],[127.968,36.095],[127.965,36.151],[127.989,36.169],[128.034,36.164],[128.023,36.216],[128.0,36.229],[127.949,36.219],[127.901,36.246],[127.877,36.253],[127.837,36.245],[127.831,36.292],[127.868,36.331],[127.85,36.364],[127.86,36.442],[127.888,36.479],[127.839,36.537],[127.8,36.542],[127.789,36.565],[127.818,36.573],[127.855,36.609],[127.862,36.641],[127.929,36.671],[127.951,36.697],[127.988,36.684],[128.06,36.675],[128.026,36.717],[128.057,36.776],[128.093,36.769],[128.127,36.795],[128.174,36.778],[128.202,36.776],[128.214,36.808],[128.238,36.832],[128.291,36.794],[128.306,36.77],[128.342,36.761],[128.425,36.789],[128.44,36.828],[128.42,36.848],[128.465,36.911],[128.517,36.949],[128.538,36.954],[128.613,37.009],[128.651,37.022],[128.701,37.003],[128.756,36.996],[128.765,37.04],[128.758,37.065],[128.804,37.093],[128.831,37.091],[128.845,37.071],[128.882,37.061],[128.882,37.026],[128.94,37.053],[128.961,37.04],[129.024,37.038],[129.061,37.025],[129.114,37.042],[129.18,37.02],[129.189,36.997],[129.166,36.983],[129.137,36.992],[129.101,36.976],[129.094,36.951],[129.098,36.919],[129.119,36.894],[129.151,36.881],[129.169,36.842],[129.213,36.824],[129.286,36.819],[129.282,36.797],[129.298,36.783],[129.275,36.731],[129.289,36.656],[129.278,36.632],[129.347,36.612],[129.379,36.623],[129.423,36.617],[129.428,36.576],[129.442,36.535],[129.447,36.493],[129.441,36.408],[129.435,36.389],[129.404,36.36],[129.387,36.323],[129.383,36.202],[129.404,36.168],[129.417,36.107],[129.43,36.097],[129.419,36.073],[129.382,36.055],[129.381,36.041],[129.433,35.996],[129.453,35.993],[129.479,36.01],[129.542,36.066],[129.555,36.083],[129.571,36.072],[129.587,36.017],[129.535,35.939],[129.522,35.844],[129.496,35.785],[129.498,35.748],[129.471,35.683],[129.443,35.636],[129.459,35.611],[129.379,35.626],[129.286,35.612],[129.257,35.623],[129.245,35.664],[129.175,35.682],[129.098,35.666],[129.065,35.645],[129.08,35.618],[129.008,35.579],[128.98,35.572],[128.913,35.591],[128.876,35.579],[128.851,35.557],[128.823,35.551],[128.79,35.53],[128.753,35.531],[128.689,35.553],[128.615,35.544],[128.583,35.56],[128.558,35.585],[128.55,35.64],[128.527,35.626],[128.502,35.597],[128.475,35.602],[128.421,35.579],[128.393,35.584],[128.34,35.61],[128.219,35.613],[128.204,35.659],[128.217,35.705],[128.188,35.725],[128.124,35.794],[128.099,35.801],[128.041,35.802],[128.012,35.82],[127.966,35.827],[127.961,35.843],[127.922,35.865],[127.914,35.887]],[[130.919,37.51],[130.896,37.463],[130.852,37.46],[130.811,37.487],[130.806,37.508],[130.832,37.532],[130.904,37.546],[130.921,37.536],[130.919,37.51]]]},{"k":"kr-sj","r":"cc","p":[[[127.353,36.479],[127.33,36.48],[127.219,36.456],[127.151,36.441],[127.06,36.455],[127.084,36.488],[127.081,36.64],[127.104,36.692],[127.247,36.646],[127.227,36.612],[127.229,36.595],[127.211,36.536],[127.285,36.547],[127.361,36.543],[127.353,36.479]]]},{"k":"kr-tj","r":"cc","p":[[[127.219,36.456],[127.33,36.48],[127.353,36.479],[127.375,36.443],[127.372,36.426],[127.402,36.419],[127.434,36.425],[127.446,36.438],[127.47,36.419],[127.482,36.375],[127.45,36.291],[127.365,36.244],[127.317,36.233],[127.296,36.287],[127.291,36.36],[127.273,36.389],[127.219,36.456]]]},{"k":"kr-ul","r":"gs","p":[[[129.459,35.611],[129.467,35.599],[129.455,35.513],[129.428,35.479],[129.413,35.472],[129.401,35.513],[129.373,35.533],[129.365,35.513],[129.387,35.502],[129.388,35.462],[129.358,35.452],[129.365,35.407],[129.347,35.382],[129.36,35.354],[129.321,35.338],[129.293,35.316],[129.269,35.316],[129.236,35.327],[129.215,35.345],[129.208,35.372],[129.133,35.41],[129.09,35.45],[129.064,35.466],[129.003,35.474],[128.988,35.498],[129.012,35.54],[129.008,35.579],[129.08,35.618],[129.065,35.645],[129.098,35.666],[129.175,35.682],[129.245,35.664],[129.257,35.623],[129.286,35.612],[129.379,35.626],[129.459,35.611]]]},{"k":"kr-in","r":"gg","p":[[[126.356,37.466],[126.419,37.497],[126.473,37.499],[126.493,37.508],[126.501,37.53],[126.563,37.515],[126.577,37.502],[126.583,37.49],[126.507,37.466],[126.487,37.447],[126.443,37.421],[126.42,37.422],[126.399,37.445],[126.383,37.437],[126.356,37.466]],[[126.72,37.377],[126.717,37.384],[126.665,37.389],[126.64,37.365],[126.615,37.38],[126.639,37.414],[126.596,37.44],[126.595,37.472],[126.605,37.486],[126.642,37.496],[126.607,37.497],[126.599,37.525],[126.604,37.549],[126.7,37.552],[126.759,37.507],[126.77,37.464],[126.796,37.443],[126.772,37.396],[126.72,37.377]]]},{"k":"kr-kw","r":"gw","p":[[[126.966,38.213],[127.026,38.255],[127.091,38.286],[127.157,38.307],[127.222,38.313],[127.254,38.31],[127.377,38.319],[127.472,38.296],[127.561,38.312],[127.754,38.325],[127.801,38.294],[127.867,38.305],[127.972,38.3],[128.04,38.304],[128.109,38.323],[128.173,38.356],[128.226,38.4],[128.268,38.454],[128.281,38.484],[128.285,38.52],[128.275,38.572],[128.309,38.601],[128.365,38.624],[128.442,38.506],[128.475,38.426],[128.563,38.289],[128.631,38.145],[128.679,38.094],[128.692,38.065],[128.924,37.802],[129.064,37.679],[129.073,37.613],[129.109,37.597],[129.148,37.505],[129.19,37.47],[129.235,37.398],[129.263,37.371],[129.283,37.325],[129.331,37.282],[129.347,37.247],[129.36,37.172],[129.379,37.13],[129.43,37.073],[129.434,37.061],[129.413,37.028],[129.429,36.898],[129.438,36.856],[129.471,36.772],[129.474,36.731],[129.463,36.693],[129.423,36.617],[129.379,36.623],[129.347,36.612],[129.278,36.632],[129.289,36.656],[129.275,36.731],[129.298,36.783],[129.282,36.797],[129.286,36.819],[129.213,36.824],[129.169,36.842],[129.151,36.881],[129.119,36.894],[129.098,36.919],[129.094,36.951],[129.101,36.976],[129.137,36.992],[129.166,36.983],[129.189,36.997],[129.18,37.02],[129.114,37.042],[129.061,37.025],[129.024,37.038],[128.961,37.04],[128.94,37.053],[128.882,37.026],[128.882,37.061],[128.845,37.071],[128.831,37.091],[128.804,37.093],[128.758,37.065],[128.765,37.04],[128.756,36.996],[128.701,37.003],[128.651,37.022],[128.61,37.039],[128.559,37.046],[128.508,37.074],[128.421,37.064],[128.394,37.093],[128.386,37.117],[128.338,37.112],[128.298,37.101],[128.265,37.117],[128.282,37.138],[128.31,37.154],[128.322,37.175],[128.247,37.187],[128.191,37.203],[128.148,37.18],[128.124,37.185],[128.071,37.157],[128.038,37.151],[128.026,37.186],[127.988,37.218],[127.937,37.204],[127.918,37.186],[127.923,37.138],[127.888,37.114],[127.841,37.123],[127.811,37.118],[127.819,37.166],[127.713,37.154],[127.607,37.131],[127.661,37.212],[127.706,37.299],[127.768,37.403],[127.769,37.448],[127.831,37.509],[127.805,37.534],[127.723,37.547],[127.616,37.593],[127.562,37.59],[127.54,37.605],[127.552,37.638],[127.557,37.678],[127.53,37.671],[127.518,37.683],[127.547,37.71],[127.535,37.746],[127.538,37.792],[127.62,37.84],[127.626,37.881],[127.602,37.91],[127.564,37.92],[127.55,37.949],[127.504,37.949],[127.479,37.964],[127.466,37.99],[127.462,38.037],[127.445,38.065],[127.408,38.069],[127.366,38.057],[127.328,38.065],[127.297,38.084],[127.296,38.103],[127.314,38.134],[127.291,38.138],[127.256,38.109],[127.213,38.116],[127.2,38.139],[127.19,38.123],[127.19,38.09],[127.177,38.074],[127.14,38.087],[127.095,38.121],[127.082,38.12],[127.036,38.18],[126.966,38.213]]]},{"k":"kr-gn","r":"cc","p":[[[126.334,36.495],[126.325,36.554],[126.315,36.582],[126.341,36.604],[126.36,36.61],[126.376,36.586],[126.363,36.574],[126.381,36.536],[126.379,36.518],[126.405,36.493],[126.384,36.487],[126.405,36.48],[126.413,36.44],[126.432,36.408],[126.364,36.411],[126.346,36.453],[126.364,36.473],[126.328,36.471],[126.334,36.495]],[[127.247,36.646],[127.104,36.692],[127.081,36.64],[127.084,36.488],[127.06,36.455],[127.151,36.441],[127.219,36.456],[127.273,36.389],[127.291,36.36],[127.296,36.287],[127.317,36.233],[127.365,36.244],[127.45,36.291],[127.482,36.375],[127.512,36.399],[127.539,36.39],[127.477,36.298],[127.465,36.26],[127.466,36.204],[127.498,36.209],[127.558,36.186],[127.568,36.156],[127.567,36.121],[127.576,36.087],[127.619,36.03],[127.571,35.993],[127.49,35.981],[127.433,35.987],[127.43,36.016],[127.383,36.033],[127.338,36.098],[127.307,36.121],[127.276,36.09],[127.227,36.078],[127.114,36.056],[127.093,36.083],[127.102,36.126],[127.065,36.133],[126.961,36.106],[126.857,36.092],[126.812,36.047],[126.792,36.042],[126.754,36.018],[126.693,36.0],[126.677,36.006],[126.665,36.035],[126.631,36.076],[126.645,36.085],[126.612,36.099],[126.589,36.131],[126.529,36.153],[126.51,36.151],[126.5,36.126],[126.497,36.16],[126.561,36.182],[126.603,36.172],[126.58,36.2],[126.548,36.206],[126.535,36.22],[126.568,36.287],[126.572,36.306],[126.513,36.322],[126.529,36.334],[126.573,36.343],[126.576,36.366],[126.527,36.37],[126.501,36.391],[126.514,36.398],[126.499,36.42],[126.538,36.433],[126.557,36.456],[126.618,36.473],[126.559,36.474],[126.523,36.441],[126.498,36.448],[126.483,36.497],[126.514,36.529],[126.47,36.54],[126.458,36.596],[126.513,36.603],[126.52,36.626],[126.484,36.649],[126.508,36.67],[126.499,36.684],[126.475,36.688],[126.477,36.717],[126.501,36.72],[126.479,36.747],[126.441,36.724],[126.447,36.684],[126.444,36.638],[126.424,36.606],[126.367,36.629],[126.378,36.702],[126.367,36.707],[126.37,36.733],[126.343,36.74],[126.324,36.7],[126.301,36.699],[126.336,36.644],[126.326,36.628],[126.343,36.61],[126.315,36.602],[126.295,36.583],[126.288,36.61],[126.302,36.635],[126.273,36.673],[126.282,36.693],[126.274,36.72],[126.229,36.685],[126.188,36.674],[126.166,36.679],[126.162,36.706],[126.214,36.712],[126.203,36.743],[126.158,36.761],[126.15,36.724],[126.133,36.704],[126.128,36.761],[126.157,36.794],[126.166,36.816],[126.185,36.781],[126.213,36.781],[126.192,36.809],[126.221,36.802],[126.24,36.816],[126.199,36.823],[126.214,36.857],[126.191,36.872],[126.192,36.886],[126.234,36.904],[126.23,36.873],[126.269,36.871],[126.282,36.884],[126.286,36.961],[126.309,36.967],[126.307,36.931],[126.323,36.883],[126.301,36.857],[126.309,36.829],[126.282,36.813],[126.291,36.789],[126.328,36.805],[126.357,36.789],[126.329,36.847],[126.339,36.857],[126.365,36.835],[126.37,36.846],[126.405,36.857],[126.377,36.871],[126.416,36.9],[126.411,36.939],[126.376,36.941],[126.354,36.955],[126.37,36.959],[126.369,36.984],[126.336,36.987],[126.364,37.001],[126.395,36.993],[126.391,37.008],[126.446,37.004],[126.453,36.99],[126.432,36.962],[126.439,36.946],[126.469,36.957],[126.48,36.929],[126.466,36.912],[126.466,36.867],[126.484,36.841],[126.519,36.948],[126.549,36.926],[126.569,36.898],[126.583,36.898],[126.559,36.942],[126.494,36.997],[126.506,37.006],[126.55,36.973],[126.572,36.977],[126.566,36.991],[126.533,37.001],[126.512,37.016],[126.501,37.055],[126.519,37.055],[126.626,36.996],[126.636,36.982],[126.622,36.96],[126.634,36.937],[126.631,36.912],[126.649,36.933],[126.645,36.958],[126.665,36.989],[126.714,36.993],[126.758,36.982],[126.796,36.956],[126.798,36.935],[126.782,36.891],[126.823,36.919],[126.834,36.896],[126.832,36.831],[126.849,36.788],[126.83,36.775],[126.851,36.754],[126.871,36.804],[126.863,36.829],[126.905,36.822],[126.86,36.87],[126.943,36.893],[126.961,36.905],[127.048,36.897],[127.131,36.926],[127.174,36.91],[127.213,36.884],[127.26,36.879],[127.323,36.813],[127.322,36.792],[127.339,36.765],[127.322,36.716],[127.304,36.715],[127.247,36.646]]]},{"k":"kr-cj","r":"jj","p":[[[126.873,33.373],[126.841,33.31],[126.78,33.306],[126.742,33.28],[126.641,33.265],[126.607,33.241],[126.565,33.233],[126.521,33.237],[126.47,33.229],[126.429,33.239],[126.333,33.238],[126.304,33.227],[126.286,33.2],[126.254,33.204],[126.231,33.235],[126.201,33.244],[126.171,33.269],[126.161,33.301],[126.179,33.341],[126.206,33.376],[126.241,33.393],[126.27,33.436],[126.298,33.442],[126.31,33.464],[126.459,33.502],[126.485,33.521],[126.582,33.529],[126.649,33.553],[126.665,33.55],[126.792,33.564],[126.823,33.56],[126.85,33.535],[126.898,33.519],[126.913,33.506],[126.932,33.465],[126.954,33.465],[126.933,33.452],[126.939,33.431],[126.907,33.396],[126.873,33.373]]]},{"k":"kr-gb","r":"cc","p":[[[127.26,36.879],[127.305,36.889],[127.38,36.915],[127.39,36.944],[127.431,36.967],[127.468,37.01],[127.493,37.0],[127.518,37.014],[127.576,37.102],[127.607,37.131],[127.713,37.154],[127.819,37.166],[127.811,37.118],[127.841,37.123],[127.888,37.114],[127.923,37.138],[127.918,37.186],[127.937,37.204],[127.988,37.218],[128.026,37.186],[128.038,37.151],[128.071,37.157],[128.124,37.185],[128.148,37.18],[128.191,37.203],[128.247,37.187],[128.322,37.175],[128.31,37.154],[128.282,37.138],[128.265,37.117],[128.298,37.101],[128.338,37.112],[128.386,37.117],[128.394,37.093],[128.421,37.064],[128.508,37.074],[128.559,37.046],[128.61,37.039],[128.651,37.022],[128.613,37.009],[128.538,36.954],[128.517,36.949],[128.465,36.911],[128.42,36.848],[128.44,36.828],[128.425,36.789],[128.342,36.761],[128.306,36.77],[128.291,36.794],[128.238,36.832],[128.214,36.808],[128.202,36.776],[128.174,36.778],[128.127,36.795],[128.093,36.769],[128.057,36.776],[128.026,36.717],[128.06,36.675],[127.988,36.684],[127.951,36.697],[127.929,36.671],[127.862,36.641],[127.855,36.609],[127.818,36.573],[127.789,36.565],[127.8,36.542],[127.839,36.537],[127.888,36.479],[127.86,36.442],[127.85,36.364],[127.868,36.331],[127.831,36.292],[127.837,36.245],[127.877,36.253],[127.901,36.246],[127.949,36.219],[128.0,36.229],[128.023,36.216],[128.034,36.164],[127.989,36.169],[127.965,36.151],[127.968,36.095],[127.951,36.074],[127.927,36.024],[127.878,36.007],[127.852,35.987],[127.823,36.004],[127.753,35.975],[127.684,36.0],[127.652,36.023],[127.637,36.014],[127.619,36.03],[127.576,36.087],[127.567,36.121],[127.568,36.156],[127.558,36.186],[127.498,36.209],[127.466,36.204],[127.465,36.26],[127.477,36.298],[127.539,36.39],[127.512,36.399],[127.482,36.375],[127.47,36.419],[127.446,36.438],[127.434,36.425],[127.402,36.419],[127.372,36.426],[127.375,36.443],[127.353,36.479],[127.361,36.543],[127.285,36.547],[127.211,36.536],[127.229,36.595],[127.227,36.612],[127.247,36.646],[127.304,36.715],[127.322,36.716],[127.339,36.765],[127.322,36.792],[127.323,36.813],[127.26,36.879]]]},{"k":"kr-so","r":"gg","p":[[[127.116,37.551],[127.187,37.558],[127.192,37.528],[127.163,37.515],[127.172,37.489],[127.145,37.458],[127.061,37.428],[127.049,37.45],[126.964,37.428],[126.921,37.429],[126.892,37.46],[126.842,37.477],[126.837,37.506],[126.794,37.551],[126.809,37.577],[126.837,37.576],[126.869,37.56],[126.914,37.577],[126.921,37.61],[126.966,37.613],[127.003,37.66],[127.023,37.677],[127.054,37.683],[127.091,37.681],[127.107,37.657],[127.124,37.603],[127.125,37.579],[127.116,37.551]]]},{"k":"kr-tg","r":"gs","p":[[[128.724,35.85],[128.711,35.799],[128.689,35.788],[128.599,35.803],[128.562,35.768],[128.523,35.792],[128.511,35.811],[128.481,35.828],[128.476,35.846],[128.489,35.862],[128.52,35.864],[128.526,35.883],[128.508,35.887],[128.536,35.922],[128.53,35.968],[128.577,35.999],[128.693,36.009],[128.734,35.986],[128.746,35.968],[128.741,35.928],[128.759,35.91],[128.757,35.862],[128.724,35.85]]]},{"k":"kr-kj","r":"jl","p":[[[126.85,35.185],[126.823,35.234],[126.844,35.251],[126.88,35.243],[126.934,35.254],[126.986,35.239],[127.006,35.193],[126.966,35.15],[126.905,35.158],[126.85,35.185]]]}];
+const REG = {gg:'서울·경기',gw:'강원',cc:'충청',jl:'전라',gs:'경상',jj:'제주'};
+const REG_FULL = {gg:'서울·경기·인천',gw:'강원도',cc:'충청도',jl:'전라도',gs:'경상도',jj:'제주도'};
+const SEASON_KO = {spring:'봄',summer:'여름',autumn:'가을',winter:'겨울'};
+const T = [
+ {id:'jogye',n:'조계사',h:'曹溪寺',r:'gg',a:'서울 종로구 우정국로 55',t:'02-768-8600',la:37.5733,lo:126.9817,d:'서울 한복판에 있는 조계종의 중심 절이에요. 대웅전 앞 회화나무와 백송이 오랜 세월을 지켜왔어요.',w:{spring:'부처님오신날 무렵 마당을 덮는 오색 연등',autumn:'10월이면 국화 향이 마당에 가득해요'}},
+ {id:'bongeun',n:'봉은사',h:'奉恩寺',r:'gg',a:'서울 강남구 봉은사로 531',t:'02-3218-4800',la:37.515,lo:127.0576,d:'강남 빌딩숲 속 천년 고찰이에요. 추사 김정희가 쓴 판전 현판과 큰 미륵대불이 볼거리예요.',w:{spring:'홍매화와 연등이 어우러지는 봄 마당'}},
+ {id:'gilsang',n:'길상사',h:'吉祥寺',r:'gg',a:'서울 성북구 선잠로5길 68',t:'02-3672-5945',la:37.5958,lo:126.9945,d:'법정스님의 "무소유" 정신이 깃든 성북동의 조용한 절이에요. 도심 속 숲처럼 아늑해요.',w:{autumn:'9월 경내를 붉게 물들이는 꽃무릇'}},
+ {id:'doseon',n:'도선사',h:'道詵寺',r:'gg',a:'서울 강북구 삼양로173길 504',t:'02-993-3161',la:37.6631,lo:126.9937,d:'북한산 자락의 이름난 기도처예요. 바위에 새긴 마애관음보살을 찾는 분이 많아요.',w:{autumn:'북한산 단풍과 함께하는 기도길'}},
+ {id:'hwagye',n:'화계사',h:'華溪寺',r:'gg',a:'서울 강북구 화계사길 117',t:'02-902-2663',la:37.6334,lo:127.008,d:'삼각산 아래 계곡을 낀 서울의 오래된 절이에요. 지하철로도 가기 편해요.',w:{autumn:'계곡 따라 물드는 단풍'}},
+ {id:'jingwan',n:'진관사',h:'津寬寺',r:'gg',a:'서울 은평구 진관길 73',t:'02-359-8410',la:37.638,lo:126.948,d:'사찰음식으로 이름난 북한산 서쪽의 절이에요. 한옥마을과 함께 둘러보기 좋아요.',w:{summer:'계곡 물소리와 정갈한 사찰음식'}},
+ {id:'yongju',n:'용주사',h:'龍珠寺',r:'gg',a:'경기 화성시 용주로 136',t:'031-234-0040',la:37.2109,lo:127.0007,d:'정조가 아버지 사도세자를 위해 다시 세운 효심의 절이에요. 근처 융건릉과 함께 둘러보기 좋아요.',w:{spring:'연둣빛 새잎이 돋는 경내 산책',autumn:'단풍 든 경내와 융건릉 솔숲'}},
+ {id:'bongseon',n:'봉선사',h:'奉先寺',r:'gg',a:'경기 남양주시 진접읍 봉선사길 32',t:'031-527-1951',la:37.7437,lo:127.1681,d:'광릉숲 옆 고요한 절이에요. 여름이면 절 앞 연밭이 장관이에요.',w:{summer:'7~8월 연밭 가득 핀 연꽃'}},
+ {id:'sujong',n:'수종사',h:'水鍾寺',r:'gg',a:'경기 남양주시 조안면 북한강로433번길 186',t:'031-576-8411',la:37.5935,lo:127.311,d:'운길산 중턱에서 두물머리가 한눈에 내려다보이는 절이에요. 찻집에서 마시는 차 한 잔이 일품이에요.',w:{autumn:'은행나무와 두물머리 물안개',winter:'강 위로 떠오르는 겨울 해'}},
+ {id:'silleuk',n:'신륵사',h:'神勒寺',r:'gg',a:'경기 여주시 신륵사길 73',t:'031-885-2505',la:37.3008,lo:127.659,d:'남한강 바로 옆 강가에 자리한 드문 절이에요. 강변 정자 강월헌에서 보는 풍경이 고와요.',w:{spring:'강바람 맞으며 걷는 봄 강변',autumn:'남한강에 비친 단풍'}},
+ {id:'jeondeung',n:'전등사',h:'傳燈寺',r:'gg',a:'인천 강화군 길상면 전등사로 37-41',t:'032-937-0125',la:37.6224,lo:126.4886,d:'강화 정족산성 안에 자리한 오래된 절이에요. 대웅전 처마 밑 나부상 이야기가 재미있어요.',w:{autumn:'삼랑성 성곽길 따라 물든 단풍'}},
+ {id:'bomun',n:'보문사',h:'普門寺',r:'gg',a:'인천 강화군 삼산면 삼산남로828번길 44',t:'032-933-8271',la:37.6789,lo:126.306,d:'석모도 낙가산 눈썹바위 아래 마애관음보살이 서해를 내려다보는 기도처예요.',w:{winter:'서해로 지는 붉은 노을'}},
+ {id:'yongmun',n:'용문사',h:'龍門寺',r:'gg',a:'경기 양평군 용문면 용문산로 782',t:'031-773-3797',la:37.5375,lo:127.5951,d:'천 년이 넘은 커다란 은행나무로 이름난 양평의 절이에요.',w:{autumn:'10월 말 황금빛으로 물드는 천년 은행나무'}},
+ {id:'bongwon',n:'봉원사',h:'奉元寺',r:'gg',a:'서울 서대문구 봉원사길 120',t:'02-392-3007',la:37.57,lo:126.944,d:'신촌 안산 자락에 있는 태고종의 중심 절이에요. 여름 연꽃이 아름다워요.',w:{summer:'7월 마당 가득 피는 연꽃'}},
+ {id:'heungcheon',n:'흥천사',h:'興天寺',r:'gg',a:'서울 성북구 흥천사길 29',t:'',la:37.596,lo:127.011,d:'태조 이성계가 신덕왕후를 위해 세운 왕실의 절이에요. 단청 고운 극락보전이 있어요.',w:{autumn:'단청과 어우러진 가을빛'}},
+ {id:'sugook',n:'수국사',h:'守國寺',r:'gg',a:'서울 은평구 서오릉로23길 8-5',t:'',la:37.617,lo:126.907,d:'법당 전체를 금빛으로 꾸민 황금 법당으로 유명한 은평의 절이에요.',w:{spring:'봄볕에 더 반짝이는 황금 법당'}},
+ {id:'seungga',n:'승가사',h:'僧伽寺',r:'gg',a:'서울 종로구 비봉길 178',t:'',la:37.625,lo:126.958,d:'북한산 비봉 아래 높이 자리한 절이에요. 바위에 새긴 큰 마애불이 계세요.',w:{autumn:'북한산 비봉 아래 단풍'}},
+ {id:'yeonju',n:'연주암',h:'戀主庵',r:'gg',a:'경기 과천시 자하동길 63',t:'',la:37.443,lo:126.964,d:'관악산 정상 가까이 있는 암자예요. 산에 오르는 분들이 쉬어 가는 곳이에요.',w:{autumn:'관악산 정상길 단풍'}},
+ {id:'cheonggye',n:'청계사',h:'淸溪寺',r:'gg',a:'경기 의왕시 청계로 475',t:'',la:37.391,lo:127.03,d:'청계산 숲속의 오래된 절이에요. 커다란 와불이 누워 계세요.',w:{autumn:'청계산 숲길 단풍'}},
+ {id:'bogwang',n:'보광사',h:'普光寺',r:'gg',a:'경기 파주시 광탄면 보광로 474-268',t:'',la:37.77,lo:126.95,d:'고령산 숲에 안긴 파주의 고즈넉한 절이에요. 영조와 관련된 이야기가 전해져요.',w:{autumn:'고령산 단풍과 고요한 숲'}},
+ {id:'hoeam',n:'회암사',h:'檜巖寺',r:'gg',a:'경기 양주시 회암사길 281',t:'',la:37.833,lo:127.068,d:'조선 왕실의 큰 절이 있던 회암사지 위쪽 천보산 자락의 절이에요.',w:{autumn:'넓은 절터와 천보산 가을'}},
+ {id:'myojeok',n:'묘적사',h:'妙寂寺',r:'gg',a:'경기 남양주시 와부읍 묘적사길 150',t:'',la:37.605,lo:127.24,d:'연못과 숲이 어우러진 남양주의 작고 조용한 절이에요.',w:{summer:'연못가 시원한 숲 그늘'}},
+ {id:'hyeondeung',n:'현등사',h:'懸燈寺',r:'gg',a:'경기 가평군 조종면 운악청계로 589번길',t:'',la:37.892,lo:127.327,d:'운악산 중턱 바위 절벽 사이에 자리한 가평의 절이에요.',w:{autumn:'운악산 기암과 단풍'}},
+ {id:'chiljang',n:'칠장사',h:'七長寺',r:'gg',a:'경기 안성시 죽산면 칠장로 399-18',t:'031-673-0776',la:37.007,lo:127.434,d:'어사 박문수가 과거 길에 기도했다는 이야기로 합격 기도처로 이름난 절이에요.',w:{autumn:'칠현산 단풍'}},
+ {id:'jeongsu',n:'정수사',h:'淨水寺',r:'gg',a:'인천 강화군 화도면 해안남로1147번길',t:'',la:37.611,lo:126.452,d:'마니산 동쪽 기슭의 작은 절이에요. 대웅보전 꽃살문이 아름다워요.',w:{spring:'마니산 진달래와 꽃살문'}},
+ {id:'woljeong',n:'월정사',h:'月精寺',r:'gw',a:'강원 평창군 진부면 오대산로 374-8',t:'033-339-6800',la:37.7317,lo:128.5926,d:'오대산 전나무숲길 끝에 있는 절이에요. 팔각구층석탑이 참 아름다워요.',w:{summer:'시원한 전나무숲길 산책',winter:'눈 덮인 전나무숲과 구층석탑'}},
+ {id:'sangwon',n:'상원사',h:'上院寺',r:'gw',a:'강원 평창군 진부면 오대산로 1211-14',t:'033-332-6666',la:37.7853,lo:128.5665,d:'월정사에서 더 올라간 오대산 깊은 곳의 절이에요. 위쪽에 부처님 사리를 모신 중대 적멸보궁이 있어요.',w:{autumn:'선재길 따라 걷는 오대산 단풍',winter:'고요한 설산 속 산사'}},
+ {id:'bongjeongam',n:'봉정암',h:'鳳頂庵',r:'gw',a:'강원 인제군 북면 용대리 설악산',t:'',la:38.1505,lo:128.4535,d:'설악산 깊은 곳 바위 아래 부처님 사리를 모신 적멸보궁이에요. 오르기 힘든 만큼 귀한 순례지예요.',w:{autumn:'설악 봉우리마다 물든 단풍'}},
+ {id:'beopheung',n:'법흥사',h:'法興寺',r:'gw',a:'강원 영월군 수주면 무릉법흥로 1352',t:'',la:37.405,lo:128.245,d:'사자산 자락에 부처님 사리를 모신 적멸보궁이 있는 영월의 절이에요.',w:{autumn:'고요한 소나무 숲과 가을빛'}},
+ {id:'jeongam',n:'정암사',h:'淨巖寺',r:'gw',a:'강원 정선군 고한읍 함백산로 1410',t:'',la:37.209,lo:128.843,d:'함백산 자락의 적멸보궁으로, 돌로 쌓은 수마노탑이 아름다워요.',w:{summer:'해발 높은 곳의 시원한 여름'}},
+ {id:'naksan',n:'낙산사',h:'洛山寺',r:'gw',a:'강원 양양군 강현면 낙산사로 100',t:'033-672-2447',la:38.1248,lo:128.6277,d:'동해 바닷가 절벽 위 의상대와 홍련암이 있는 절이에요. 해돋이가 으뜸이에요.',w:{winter:'의상대에서 맞는 겨울 해돋이'}},
+ {id:'hyuhyu',n:'휴휴암',h:'休休庵',r:'gw',a:'강원 양양군 현남면 광진2길 3-16',t:'033-671-0093',la:37.989,lo:128.765,d:'바닷가 너럭바위 위에 누운 관음상이 있는 작은 암자예요. 파도 소리가 마음을 쉬게 해요.',w:{summer:'시원한 동해 바닷바람',winter:'바위 위로 떠오르는 해'}},
+ {id:'sinheung',n:'신흥사',h:'新興寺',r:'gw',a:'강원 속초시 설악산로 1137',t:'033-636-7044',la:38.1712,lo:128.49,d:'설악산 소공원 입구의 절이에요. 커다란 청동대불이 반겨줘요.',w:{autumn:'설악산 단풍이 가장 먼저 내려오는 곳'}},
+ {id:'baekdam',n:'백담사',h:'百潭寺',r:'gw',a:'강원 인제군 북면 백담로 746',t:'033-462-6969',la:38.166,lo:128.373,d:'내설악 깊은 계곡 속 절이에요. 마을에서 셔틀버스를 타고 들어가요.',w:{summer:'맑은 백담계곡과 돌탑들',autumn:'계곡 따라 물든 내설악 단풍'}},
+ {id:'cheongpyeong',n:'청평사',h:'淸平寺',r:'gw',a:'강원 춘천시 북산면 오봉산길 810',t:'033-244-1095',la:37.9862,lo:127.813,d:'소양호에서 배를 타고 들어가는 절이에요. 구성폭포와 공주 설화가 전해져요.',w:{summer:'배 타고 건너는 소양호와 시원한 폭포'}},
+ {id:'guryong',n:'구룡사',h:'龜龍寺',r:'gw',a:'강원 원주시 소초면 구룡사로 500',t:'033-732-4800',la:37.409,lo:128.045,d:'치악산 계곡 입구의 절이에요. 금강소나무 숲길이 시원해요.',w:{summer:'구룡계곡 물소리와 솔숲',autumn:'치악산 단풍길'}},
+ {id:'samhwa',n:'삼화사',h:'三和寺',r:'gw',a:'강원 동해시 삼화로 584',t:'033-534-7661',la:37.468,lo:129.027,d:'무릉계곡 너른 바위 곁에 자리한 동해의 절이에요.',w:{summer:'무릉반석 위로 흐르는 맑은 물'}},
+ {id:'beopju',n:'법주사',h:'法住寺',r:'cc',a:'충북 보은군 속리산면 법주사로 405',t:'043-543-3615',la:36.5419,lo:127.8336,d:'속리산 아래 큰 절이에요. 5층 목탑 팔상전과 금동미륵대불이 있어요. 세계유산이에요.',w:{autumn:'오리숲길과 속리산 단풍'}},
+ {id:'guin',n:'구인사',h:'救仁寺',r:'cc',a:'충북 단양군 영춘면 구인사길 73',t:'043-423-7100',la:37.0335,lo:128.47,d:'소백산 골짜기에 전각이 층층이 들어선 천태종 총본산이에요.',w:{autumn:'골짜기를 메운 단풍과 웅장한 전각들'}},
+ {id:'botap',n:'보탑사',h:'寶塔寺',r:'cc',a:'충북 진천군 진천읍 김유신길 641',t:'',la:36.853,lo:127.404,d:'나무로 지은 높은 3층 목탑이 우뚝한 비구니 도량이에요. 꽃밭이 예쁘게 가꿔져 있어요.',w:{spring:'목탑 둘레로 피는 봄꽃'}},
+ {id:'sudeok',n:'수덕사',h:'修德寺',r:'cc',a:'충남 예산군 덕산면 수덕사안길 79',t:'041-330-7700',la:36.664,lo:126.6202,d:'덕숭산 아래 절이에요. 고려 때 지은 대웅전이 지금도 그대로 남아 있어요.',w:{autumn:'국보 대웅전과 어우러진 덕숭산 단풍'}},
+ {id:'gaesim',n:'개심사',h:'開心寺',r:'cc',a:'충남 서산시 운산면 개심사로 321-86',t:'041-688-2256',la:36.7446,lo:126.5944,d:'서산 상왕산의 아담한 절이에요. 굽은 나무 기둥 그대로 지은 심검당이 정겨워요.',w:{spring:'4월 말 연둣빛 청벚꽃과 겹벚꽃'}},
+ {id:'ganwol',n:'간월암',h:'看月庵',r:'cc',a:'충남 서산시 부석면 간월도1길 119-29',t:'041-668-6624',la:36.607,lo:126.407,d:'밀물이면 섬이 되고 썰물이면 걸어 들어가는 바다 위 암자예요. 물때를 확인하고 가세요.',w:{winter:'갯벌 너머로 지는 서해 노을'}},
+ {id:'magok',n:'마곡사',h:'麻谷寺',r:'cc',a:'충남 공주시 사곡면 마곡사로 966',t:'041-841-6220',la:36.5531,lo:127.0151,d:'"봄에는 마곡사"라는 말이 있을 만큼 봄이 고운 공주의 절이에요. 세계유산이에요.',w:{spring:'계곡 따라 피는 봄꽃과 신록'}},
+ {id:'gap',n:'갑사',h:'甲寺',r:'cc',a:'충남 공주시 계룡면 갑사로 567-3',t:'041-857-8981',la:36.3707,lo:127.1856,d:'계룡산 자락의 절이에요. "가을엔 갑사"라고 할 만큼 단풍이 이름났어요.',w:{autumn:'오리숲 단풍길 걸어 오르기'}},
+ {id:'donghak',n:'동학사',h:'東鶴寺',r:'cc',a:'충남 공주시 반포면 동학사1로 462',t:'042-825-2570',la:36.3577,lo:127.2275,d:'계룡산 동쪽 계곡의 비구니 도량이에요. 들어가는 길 벚꽃이 유명해요.',w:{spring:'4월 동학사 벚꽃길'}},
+ {id:'goran',n:'고란사',h:'皐蘭寺',r:'cc',a:'충남 부여군 부여읍 부소로 1-25',t:'041-835-2062',la:36.288,lo:126.91,d:'부소산 낙화암 아래 백마강변의 작은 절이에요. 황포돛배를 타고 닿을 수 있어요.',w:{summer:'백마강 돛배 타고 가는 길'}},
+ {id:'gakwon',n:'각원사',h:'覺願寺',r:'cc',a:'충남 천안시 동남구 각원사길 245',t:'041-561-3545',la:36.832,lo:127.201,d:'태조산 자락에 커다란 청동 아미타불이 앉아 있는 천안의 절이에요.',w:{spring:'4월 말 탐스러운 겹벚꽃'}},
+ {id:'geumsan',n:'금산사',h:'金山寺',r:'jl',a:'전북 김제시 금산면 모악15길 1',t:'063-548-4441',la:35.7235,lo:127.0538,d:'모악산 아래 3층 미륵전이 우뚝한 김제의 절이에요.',w:{spring:'벚꽃길 따라 들어서는 봄 산사'}},
+ {id:'songgwangwj',n:'송광사(완주)',h:'松廣寺',r:'jl',a:'전북 완주군 소양면 송광수만로 255-16',t:'063-243-8091',la:35.893,lo:127.238,d:'평지에 반듯하게 자리한 완주의 절이에요. 십자 모양 종각이 특별해요.',w:{spring:'절 앞 길게 이어지는 벚꽃길'}},
+ {id:'tapsa',n:'마이산 탑사',h:'塔寺',r:'jl',a:'전북 진안군 마령면 마이산남로 367',t:'063-433-0001',la:35.759,lo:127.412,d:'말 귀 모양 마이산 아래 돌탑 수십 기가 쌓여 있는 신기한 절이에요.',w:{spring:'4월 마이산 벚꽃'}},
+ {id:'silsang',n:'실상사',h:'實相寺',r:'jl',a:'전북 남원시 산내면 입석길 94-129',t:'063-636-3031',la:35.374,lo:127.613,d:'지리산 품 들판에 자리한 평지 절이에요. 넉넉하고 편안한 분위기예요.',w:{autumn:'황금 들녘과 지리산 능선'}},
+ {id:'seonun',n:'선운사',h:'禪雲寺',r:'jl',a:'전북 고창군 아산면 선운사로 250',t:'063-561-1422',la:35.4996,lo:126.6184,d:'고창 도솔산의 절이에요. 봄 동백과 가을 꽃무릇으로 유명해요.',w:{spring:'대웅전 뒤 붉은 동백숲',autumn:'9월 계곡을 붉게 덮는 꽃무릇'}},
+ {id:'naeso',n:'내소사',h:'來蘇寺',r:'jl',a:'전북 부안군 진서면 내소사로 243',t:'063-583-7281',la:35.6278,lo:126.5946,d:'전나무 숲길과 꽃무늬 문살이 아름다운 변산반도의 절이에요.',w:{autumn:'능가산 단풍과 꽃살문',winter:'눈 내린 전나무 숲길'}},
+ {id:'gaeam',n:'개암사',h:'開巖寺',r:'jl',a:'전북 부안군 상서면 개암로 248',t:'063-583-3871',la:35.662,lo:126.663,d:'커다란 울금바위를 등지고 앉은 부안의 아늑한 절이에요.',w:{spring:'4월 벚꽃 핀 진입로'}},
+ {id:'naejang',n:'내장사',h:'內藏寺',r:'jl',a:'전북 정읍시 내장산로 1253',t:'063-538-8741',la:35.4887,lo:126.8921,d:'단풍 하면 내장산, 그 품에 안긴 절이에요.',w:{autumn:'11월 초 터널처럼 물드는 단풍길'}},
+ {id:'baekyang',n:'백양사',h:'白羊寺',r:'jl',a:'전남 장성군 북하면 백양로 1239',t:'061-392-7502',la:35.4386,lo:126.8828,d:'연못에 비친 쌍계루와 백학봉, 잎이 작은 애기단풍으로 이름난 절이에요.',w:{autumn:'쌍계루 연못에 비친 애기단풍'}},
+ {id:'bulgap',n:'불갑사',h:'佛甲寺',r:'jl',a:'전남 영광군 불갑면 불갑사로 450',t:'061-352-8097',la:35.2,lo:126.558,d:'백제에 불교가 처음 들어와 세운 절로 전해져요. 꽃무릇 군락이 우리나라에서 손꼽혀요.',w:{autumn:'9월 산을 덮는 붉은 꽃무릇'}},
+ {id:'jeungsim',n:'증심사',h:'證心寺',r:'jl',a:'광주 동구 증심사길 177',t:'062-226-0108',la:35.127,lo:126.978,d:'무등산 들머리에 있는 광주의 대표 절이에요. 등산길에 들르기 좋아요.',w:{autumn:'무등산 단풍과 함께'}},
+ {id:'songgwang',n:'송광사',h:'松廣寺',r:'jl',a:'전남 순천시 송광면 송광사안길 100',t:'061-755-0107',la:35.0024,lo:127.2712,d:'큰스님을 많이 배출한 승보종찰이에요. 계곡 위에 걸친 우화각이 그림 같아요.',w:{summer:'계곡에 비친 우화각과 짙은 녹음'}},
+ {id:'seonam',n:'선암사',h:'仙巖寺',r:'jl',a:'전남 순천시 선암사길 450',t:'061-754-5247',la:34.9985,lo:127.3303,d:'무지개 모양 돌다리 승선교와 오래된 매화나무가 있는 조계산의 절이에요.',w:{spring:'3월 말 선암매 매화 향기'}},
+ {id:'hwaeom',n:'화엄사',h:'華嚴寺',r:'jl',a:'전남 구례군 마산면 화엄사로 539',t:'061-783-7600',la:35.2553,lo:127.4991,d:'지리산 아래 큰 절이에요. 웅장한 각황전과 붉은 홍매화가 유명해요.',w:{spring:'3월 각황전 옆에 피는 홍매화'}},
+ {id:'cheoneun',n:'천은사',h:'泉隱寺',r:'jl',a:'전남 구례군 광의면 노고단로 209',t:'061-781-4800',la:35.278,lo:127.48,d:'노고단 가는 길목, 호수를 낀 지리산의 고즈넉한 절이에요.',w:{autumn:'저수지에 비친 지리산 단풍'}},
+ {id:'heungguk',n:'흥국사',h:'興國寺',r:'jl',a:'전남 여수시 흥국사길 160',t:'061-685-5633',la:34.807,lo:127.672,d:'영취산 아래 나라를 지키려 세운 여수의 절이에요. 봄이면 산이 온통 진달래예요.',w:{spring:'4월 영취산 진달래 군락'}},
+ {id:'hyangil',n:'향일암',h:'向日庵',r:'jl',a:'전남 여수시 돌산읍 향일암로 1',t:'061-644-4742',la:34.591,lo:127.803,d:'돌산 끝 바위 틈으로 오르는 관음 기도처예요. 해돋이 명소예요.',w:{winter:'남해 바다 위로 떠오르는 해'}},
+ {id:'unju',n:'운주사',h:'雲住寺',r:'jl',a:'전남 화순군 도암면 천태로 91-44',t:'061-374-0660',la:34.9285,lo:126.878,d:'들판과 언덕에 석불과 석탑이 흩어진 신비로운 절이에요. 누워 있는 와불도 있어요.',w:{autumn:'석불들 사이로 걷는 가을 들길'}},
+ {id:'baekryeon',n:'백련사',h:'白蓮寺',r:'jl',a:'전남 강진군 도암면 백련사길 145',t:'061-432-0837',la:34.597,lo:126.76,d:'강진만이 내려다보이는 동백숲 속 절이에요. 다산초당으로 이어지는 오솔길이 있어요.',w:{spring:'뚝뚝 떨어진 동백꽃 숲길'}},
+ {id:'dogap',n:'도갑사',h:'道岬寺',r:'jl',a:'전남 영암군 군서면 도갑사로 306',t:'061-473-5122',la:34.733,lo:126.652,d:'기암괴석 월출산 아래 자리한 영암의 절이에요.',w:{autumn:'월출산 바위와 가을빛'}},
+ {id:'daeheung',n:'대흥사',h:'大興寺',r:'jl',a:'전남 해남군 삼산면 대흥사길 400',t:'061-534-5502',la:34.4754,lo:126.6156,d:'두륜산 품에 넓게 자리한 해남의 절이에요. 세계유산이에요.',w:{autumn:'긴 숲길 따라 걷는 두륜산의 가을'}},
+ {id:'mihwang',n:'미황사',h:'美黃寺',r:'jl',a:'전남 해남군 송지면 미황사길 164',t:'061-533-3521',la:34.3819,lo:126.5895,d:'땅끝 달마산 아래 노을이 아름다운 절이에요.',w:{autumn:'달마산 바위와 붉은 노을',winter:'겨울 땅끝 바다 노을'}},
+ {id:'bulguk',n:'불국사',h:'佛國寺',r:'gs',a:'경북 경주시 불국로 385',t:'054-746-9913',la:35.79,lo:129.3319,d:'다보탑과 석가탑이 있는 신라의 절이에요. 세계유산이에요.',w:{spring:'벚꽃 핀 경주와 함께하는 봄 나들이',autumn:'청운교·백운교 옆 붉은 단풍'}},
+ {id:'seokguram',n:'석굴암',h:'石窟庵',r:'gs',a:'경북 경주시 불국로 873-243',t:'054-746-9933',la:35.7949,lo:129.3492,d:'토함산 위 돌로 지은 굴 안에 본존불이 동해를 바라보고 앉아 계세요.',w:{winter:'토함산에서 맞는 동해 해돋이'}},
+ {id:'bunhwang',n:'분황사',h:'芬皇寺',r:'gs',a:'경북 경주시 분황로 94-11',t:'054-742-9922',la:35.837,lo:129.233,d:'선덕여왕 때 세운 신라의 절이에요. 벽돌 모양으로 돌을 쌓은 모전석탑이 있어요.',w:{autumn:'황룡사터 너른 들판의 가을'}},
+ {id:'girim',n:'기림사',h:'祇林寺',r:'gs',a:'경북 경주시 문무대왕면 기림로 437-17',t:'054-744-2292',la:35.817,lo:129.353,d:'함월산 깊은 골짜기의 넓고 조용한 절이에요. 관광객이 적어 한적해요.',w:{autumn:'호젓한 함월산 숲길'}},
+ {id:'haein',n:'해인사',h:'海印寺',r:'gs',a:'경남 합천군 가야면 해인사길 122',t:'055-934-3000',la:35.8013,lo:128.0979,d:'팔만대장경을 모신 법보종찰이에요. 장경판전은 세계유산이에요.',w:{autumn:'홍류동 계곡 소리길 단풍',winter:'눈 덮인 가야산과 장경판전'}},
+ {id:'tongdo',n:'통도사',h:'通度寺',r:'gs',a:'경남 양산시 하북면 통도사로 108',t:'055-382-7182',la:35.4877,lo:129.0631,d:'부처님 진신사리를 모신 불보종찰이에요. 소나무 숲길이 길고 아름다워요.',w:{spring:'2월 말~3월 가장 먼저 피는 홍매화 자장매'}},
+ {id:'beomeo',n:'범어사',h:'梵魚寺',r:'gs',a:'부산 금정구 범어사로 250',t:'051-508-3122',la:35.2836,lo:129.0683,d:'금정산에 자리한 부산의 대표 절이에요. 등나무 군락이 유명해요.',w:{spring:'5월 보랏빛 등나무꽃'}},
+ {id:'yonggung',n:'해동용궁사',h:'海東龍宮寺',r:'gs',a:'부산 기장군 기장읍 용궁길 86',t:'051-722-7744',la:35.1884,lo:129.2232,d:'바닷가 바위 위에 앉은 보기 드문 절이에요. 파도 소리를 들으며 걸어요.',w:{winter:'파도 위로 떠오르는 새해 해돋이'}},
+ {id:'jangan',n:'장안사',h:'長安寺',r:'gs',a:'부산 기장군 장안읍 장안로 482',t:'051-727-2027',la:35.388,lo:129.248,d:'불광산 계곡 옆 기장의 오래된 절이에요. 숲이 깊고 조용해요.',w:{autumn:'계곡 따라 물드는 불광산'}},
+ {id:'buseok',n:'부석사',h:'浮石寺',r:'gs',a:'경북 영주시 부석면 부석사로 345',t:'054-633-3464',la:36.9986,lo:128.6874,d:'무량수전 배흘림기둥에 기대어 소백산 노을을 바라보는 절이에요. 세계유산이에요.',w:{autumn:'노란 은행나무길과 무량수전 노을'}},
+ {id:'cheongnyang',n:'청량사',h:'淸凉寺',r:'gs',a:'경북 봉화군 명호면 청량산길 199-152',t:'054-672-1446',la:36.794,lo:128.913,d:'청량산 봉우리들이 연꽃잎처럼 감싼 자리에 앉은 절이에요. 가는 길은 가팔라도 풍경이 그만이에요.',w:{autumn:'봉우리마다 물든 청량산 단풍'}},
+ {id:'bongjeong',n:'봉정사',h:'鳳停寺',r:'gs',a:'경북 안동시 서후면 봉정사길 222',t:'054-853-4181',la:36.6597,lo:128.6648,d:'오래된 목조건물 극락전이 있는 안동의 절이에요. 세계유산이에요.',w:{autumn:'고즈넉한 영산암의 가을'}},
+ {id:'goun',n:'고운사',h:'孤雲寺',r:'gs',a:'경북 의성군 단촌면 고운사길 415',t:'054-833-2701',la:36.389,lo:128.75,d:'의성 등운산 속 소박한 절이에요. 계곡 위에 걸쳐 지은 가운루가 멋스러워요.',w:{autumn:'숲길 단풍과 가운루'}},
+ {id:'jikji',n:'직지사',h:'直指寺',r:'gs',a:'경북 김천시 대항면 직지사길 95',t:'054-429-1700',la:36.1206,lo:128.0007,d:'황악산 아래 김천의 큰 절이에요. 넓은 경내 산책이 편안해요.',w:{spring:'4월 벚꽃 가득한 진입로'}},
+ {id:'donghwa',n:'동화사',h:'桐華寺',r:'gs',a:'대구 동구 동화사1길 1',t:'053-980-7900',la:35.9948,lo:128.6696,d:'팔공산의 큰 절이에요. 커다란 통일약사여래대불이 있어요.',w:{autumn:'팔공산 단풍길 드라이브'}},
+ {id:'gatbawi',n:'갓바위 선본사',h:'禪本寺',r:'gs',a:'경북 경산시 와촌면 갓바위로 699',t:'053-851-1868',la:35.985,lo:128.743,d:'팔공산 꼭대기 갓 쓴 부처님께 한 가지 소원은 꼭 들어주신다는 이야기로 유명해요.',w:{winter:'새해 소원 빌러 오르는 갓바위',autumn:'돌계단 위로 내려다보는 팔공산 단풍'}},
+ {id:'eunhae',n:'은해사',h:'銀海寺',r:'gs',a:'경북 영천시 청통면 청통로 951',t:'054-335-3318',la:35.993,lo:128.89,d:'팔공산 동쪽 자락의 절이에요. 들어가는 소나무 숲길이 아름다워요.',w:{autumn:'솔숲과 어우러진 팔공산 단풍'}},
+ {id:'unmun',n:'운문사',h:'雲門寺',r:'gs',a:'경북 청도군 운문면 운문사길 264',t:'054-372-8800',la:35.637,lo:128.959,d:'비구니 스님들이 공부하는 큰 도량이에요. 땅으로 가지를 늘어뜨린 처진소나무가 볼거리예요.',w:{autumn:'솔바람길과 은행나무'}},
+ {id:'bogyeong',n:'보경사',h:'寶鏡寺',r:'gs',a:'경북 포항시 북구 송라면 보경로 523',t:'054-262-1117',la:36.249,lo:129.317,d:'내연산 열두 폭포 계곡 입구의 절이에요. 계곡 트레킹과 함께 좋아요.',w:{summer:'열두 폭포 시원한 계곡길'}},
+ {id:'pyochung',n:'표충사',h:'表忠寺',r:'gs',a:'경남 밀양시 단장면 표충로 1338',t:'055-352-1150',la:35.543,lo:128.966,d:'사명대사의 충절을 기리는 재약산 아래 밀양의 절이에요.',w:{autumn:'재약산 단풍과 계곡'}},
+ {id:'ssanggye',n:'쌍계사',h:'雙磎寺',r:'gs',a:'경남 하동군 화개면 쌍계사길 59',t:'055-883-1901',la:35.2433,lo:127.6386,d:'화개장터에서 이어지는 벚꽃길 끝의 절이에요. 우리 차를 처음 심은 곳이기도 해요.',w:{spring:'4월 초 화개 십리벚꽃길'}},
+ {id:'daewon',n:'대원사',h:'大源寺',r:'gs',a:'경남 산청군 삼장면 평촌유평로 453',t:'055-972-8068',la:35.308,lo:127.817,d:'지리산 동쪽 맑은 계곡 곁의 비구니 도량이에요.',w:{summer:'대원사 계곡의 맑은 물'}},
+ {id:'bori',n:'보리암',h:'菩提庵',r:'gs',a:'경남 남해군 상주면 보리암로 665',t:'055-862-6115',la:34.7538,lo:127.9867,d:'남해 금산 꼭대기의 기도처예요. 한려수도 섬들이 한눈에 내려다보여요.',w:{winter:'금산 위 일출과 바다 위 섬들'}},
+ {id:'gwaneum',n:'관음사',h:'觀音寺',r:'jj',a:'제주 제주시 산록북로 660',t:'064-724-6830',la:33.421,lo:126.547,d:'한라산 관음사 탐방로 입구에 있는 제주의 대표 절이에요.',w:{winter:'눈 쌓인 한라산 자락'}},
+ {id:'yakcheon',n:'약천사',h:'藥泉寺',r:'jj',a:'제주 서귀포시 이어도로 293-28',t:'064-738-5000',la:33.2474,lo:126.4512,d:'바다가 보이는 서귀포의 절이에요. 큰 법당이 웅장해요.',w:{spring:'유채꽃 피는 봄 바닷길'}},
+ {id:'sanbang',n:'산방굴사',h:'山房窟寺',r:'jj',a:'제주 서귀포시 안덕면 사계리 산방산',t:'',la:33.2385,lo:126.312,d:'산방산 중턱 바위굴 속에 부처님을 모신 절이에요. 굴에서 내려다보는 바다가 장관이에요.',w:{spring:'산방산 아래 노란 유채꽃밭'}}
+];
+T.forEach(t=>t.s=Object.keys(t.w));
+const ACC={jogye:[1,1],bongeun:[1,1],gilsang:[1,2],doseon:[1,2],hwagye:[1,2],jingwan:[2,1],yongju:[1,1],bongseon:[1,1],sujong:[1,2],silleuk:[1,1],jeondeung:[2,2],bomun:[2,3],yongmun:[2,2],sugook:[1,1],seungga:[4,3],yeonju:[4,3],hyeondeung:[4,3],woljeong:[1,1],sangwon:[2,2],naksan:[2,2],hyuhyu:[1,2],sinheung:[2,1],baekdam:[3,1],cheongpyeong:[2,2],guryong:[2,2],samhwa:[2,1],bongjeongam:[4,3],jeongam:[1,2],beopju:[2,1],guin:[2,3],botap:[1,1],sudeok:[2,2],gaesim:[2,2],ganwol:[1,1],magok:[2,1],gap:[2,2],donghak:[2,2],goran:[2,3],geumsan:[2,1],songgwangwj:[1,1],tapsa:[2,2],silsang:[1,1],seonun:[2,1],naeso:[2,1],naejang:[2,1],baekyang:[2,1],bulgap:[2,1],jeungsim:[2,2],songgwang:[2,1],seonam:[2,2],hwaeom:[2,2],cheoneun:[1,1],hyangil:[2,3],unju:[1,1],daeheung:[2,1],mihwang:[1,2],bulguk:[2,2],seokguram:[2,2],bunhwang:[1,1],girim:[1,1],haein:[2,3],tongdo:[1,1],beomeo:[2,2],yonggung:[2,3],buseok:[2,3],cheongnyang:[2,3],bongjeong:[2,2],jikji:[1,1],donghwa:[1,2],gatbawi:[4,3],eunhae:[2,1],unmun:[2,1],bogyeong:[2,1],pyochung:[2,1],ssanggye:[2,2],bori:[3,3],gwaneum:[1,1],yakcheon:[1,1],sanbang:[2,3]};
+T.forEach(t=>{const a=ACC[t.id];if(a){t.car=a[0];t.st=a[1];}});
+const CAR_TXT={1:'절 바로 앞까지 차로 갈 수 있어요',2:'주차장에서 조금 걸어가요 (10~20분)',3:'셔틀버스나 배를 타고 들어가요',4:'차로는 못 가요. 산길을 한참 올라야 해요'};
+const ST_TXT={1:'계단이 거의 없고 평평해요',2:'오르막이나 계단이 조금 있어요',3:'계단이나 가파른 길이 많아요'};
+const easy=t=>t.st===1&&(t.car===1||t.car===2);
+const TS=['jogye','bongeun','jingwan','yongju','bongseon','jeondeung','woljeong','naksan','sinheung','baekdam','beopju','sudeok','magok','geumsan','seonun','naeso','baekyang','songgwang','hwaeom','daeheung','mihwang','bulguk','haein','tongdo','beomeo','jikji','donghwa','ssanggye','gwaneum','yakcheon'];
+const FOOD={jingwan:'사찰음식으로 이름난 절이에요. 정갈한 절밥을 맛볼 수 있어요.',baekyang:'산내 암자 천진암의 정관스님 사찰음식이 세계에 알려졌어요.',jogye:'근처에 사찰음식을 배우고 맛보는 체험관이 있어요.'};
+T.forEach(t=>{if(TS.includes(t.id))t.ts=true;if(FOOD[t.id])t.food=FOOD[t.id];});
+const FEAT={easy:{n:'계단 적은 절',on:false,f:easy,ic:'w'},ts:{n:'템플스테이',on:false,f:t=>!!t.ts},food:{n:'사찰음식',on:false,f:t=>!!t.food}};
+const passF=t=>Object.values(FEAT).every(x=>!x.on||x.f(t));
+const byId = Object.fromEntries(T.map(t=>[t.id,t]));
+const $ = s=>document.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- state ---------- */
+const KEY='juyuni-sachal-v1';
+let S={marks:{},season:null};
+try{const raw=localStorage.getItem(KEY); if(raw) S=Object.assign(S,JSON.parse(raw));}catch(e){}
+let remote=null, ASSETS=null;
+function mk(id){return S.marks[id]||{}}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}
+  clearTimeout(save.t); save.t=setTimeout(()=>{ if(remote) remote.set({marks:S.marks,custom:S.custom||[],updated:Date.now()}).catch(()=>{}); },700);
+}
+function setMark(id,patch){S.marks[id]=Object.assign({},mk(id),patch,{u:Date.now()}); save();}
+let fbUser=null, fbAuth=null, PHOTOS={};
+function blobToDataURL(b){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(b);});}
+(async()=>{
+  if(!FIREBASE_CONFIG||!window.firebase) return;
+  try{
+    firebase.initializeApp(FIREBASE_CONFIG);
+    fbAuth=firebase.auth(); const fdb=firebase.firestore();
+    fbAuth.getRedirectResult().catch(()=>{});
+    fbAuth.onAuthStateChanged(async u=>{
+      fbUser=u; renderLogin();
+      if(!u){remote=null;ASSETS=null;return;}
+      const ref=fdb.collection('users').doc(u.uid), photosCol=ref.collection('photos');
+      try{
+        const snap=await ref.get();
+        remote={set:d=>ref.set(d)};
+        if(snap.exists){
+          const data=snap.data()||{}, rm=data.marks||{};
+          (data.custom||[]).forEach(c=>{if(!byId[c.id]){S.custom=(S.custom||[]);S.custom.push(c);addTemple(c);}});
+          for(const [id,m] of Object.entries(rm)){ const l=S.marks[id]; if(!l||(m.u||0)>(l.u||0)) S.marks[id]=m; }
+          try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}
+        }
+        save();
+        const ps=await photosCol.get(); ps.forEach(d=>{PHOTOS[d.id]=d.data().src;});
+        ASSETS={
+          upload:async blob=>{const src=await blobToDataURL(blob);const d=await photosCol.add({src,at:Date.now()});PHOTOS[d.id]=src;return {id:d.id};},
+          delete:async id=>{await photosCol.doc(id).delete();delete PHOTOS[id];}
+        };
+        renderAll(); if(openId&&byId[openId]) renderSheet(openId,false);
+      }catch(e){ toast('저장 공간에 연결하지 못했어요. 잠시 뒤 다시 열어주세요'); }
+    });
+  }catch(e){}
+})();
+function renderLogin(){
+  const bar=$('#loginbar'), ac=$('#acct'); if(!bar) return;
+  if(!FIREBASE_CONFIG){bar.hidden=true;ac.innerHTML='';return;}
+  if(fbUser){bar.hidden=true;ac.innerHTML=`${esc(fbUser.displayName||fbUser.email||'')} 계정에 저장하고 있어요 · <button class="linkbtn" id="logoutBtn">로그아웃</button>`;$('#logoutBtn').onclick=()=>fbAuth.signOut();return;}
+  ac.innerHTML='';
+  const inApp=/KAKAOTALK|NAVER|Instagram|FBAN|FBAV|Line\//i.test(navigator.userAgent);
+  bar.hidden=false;
+  bar.innerHTML=inApp?`<b>로그인하려면 다른 브라우저로 열어주세요</b><span>카카오톡 같은 앱 안에서는 구글 로그인이 안 돼요.<br>오른쪽 위 메뉴(⋮)에서 "다른 브라우저로 열기"를 눌러주세요.</span>`
+    :`<span><b>구글 계정으로 로그인해 주세요</b><br>휴대폰이 바뀌어도 다녀온 기록과 사진이 그대로 남아요.</span><button class="btn primary" id="loginBtn">구글로 로그인</button>`;
+  const b=$('#loginBtn'); if(b) b.onclick=()=>{const pr=new firebase.auth.GoogleAuthProvider();fbAuth.signInWithPopup(pr).catch(e=>{if(e&&/popup/.test(e.code||''))fbAuth.signInWithRedirect(pr);else toast('로그인하지 못했어요. 다시 한 번 눌러주세요');});};
+}
+
+/* ---------- greeting ---------- */
+const SAYINGS=['주유니는 존재만으로도 우리 가족의 기둥이에요.','누구보다 씩씩한 주유니, 늘 자랑스러워요.','주유니의 지혜가 우리 집을 밝혀주는 등불이에요.','주유니 덕분에 우리가 이만큼 잘 컸어요.','주유니는 여전히 제일 멋진 사람이에요.','주유니의 고운 마음은 언제나 그대로예요.','세상에서 제일 멋진 순례자, 주유니예요.','주유니가 웃으면 우리 집에 봄이 와요.','주유니가 있어서 우리는 늘 든든해요.','주유니 없으면 우리 집이 안 돌아가요.','주유니처럼 살고 싶다고 늘 생각해요.','주유니의 손맛과 정성은 누구도 못 따라가요.','회복하는 시간도 용감한 여행이에요.','오늘 조금 힘들어도 괜찮아요. 충분히 잘하고 계세요.','아픈 것도 지나가요. 좋은 날은 꼭 다시 와요.','쉬어 가는 날도 순례예요.','몸이 쉬는 동안에도 마음은 어디든 갈 수 있어요.','천천히 가도 괜찮아요. 좋은 곳은 기다려줘요.','도움받는 것도 사랑받는 거예요.','기대도 괜찮아요. 우리가 늘 옆에 있어요.','오늘 웃은 만큼 몸도 마음도 가벼워져요.','꽃은 서두르지 않아도 때가 되면 피어요.','겨울을 지난 나무가 더 단단해지듯, 주유니도 그래요.','힘든 날엔 힘들다고 말해도 돼요. 다 들어드릴게요.','다시 가볼 절들이 주유니를 기다리고 있어요.','지금도 하루하루 좋아지고 있어요.','오늘 마음에 작은 등 하나 켜 보세요.','산이 깊을수록 풍경 소리는 더 맑아요.','마음이 고요하면 어디든 산사예요.','웃는 얼굴이 가장 고운 공양이에요.','다녀온 길마다 좋은 인연이 남아 있어요.','오늘도 무탈하고 평안하세요.','따뜻한 차 한 잔처럼 편안한 하루 되세요.','걱정은 산바람에 실어 보내요.','예쁜 꽃을 보면 주유니가 생각나요.','주유니의 기도는 늘 따뜻하게 닿아요.','마음에 연꽃 한 송이 피는 하루 되세요.','지나온 날들이 모두 아름다운 꽃길이었어요.','함께해서 늘 고맙고 사랑해요.','오늘도 사랑받는 하루예요.','작은 미소가 큰 복을 불러와요.','고생 많으셨어요. 오늘은 푹 쉬세요.'];
+function greet(){
+  const h=new Date().getHours();
+  $('#greet').textContent='주유니, '+(h<5?'고요한 밤이에요':h<11?'좋은 아침이에요':h<17?'좋은 오후예요':'편안한 저녁이에요');
+  showSaying(false);
+}
+let sayIdx=-1;
+function showSaying(anim){
+  let last=-1; try{last=+(localStorage.getItem('juyuni-say')??-1)}catch(e){}
+  let i; do{i=Math.floor(Math.random()*SAYINGS.length)}while((i===last||i===sayIdx)&&SAYINGS.length>2);
+  sayIdx=i; try{localStorage.setItem('juyuni-say',i)}catch(e){}
+  const el=$('#saying');
+  if(anim){el.style.transition='opacity .25s';el.style.opacity=0;setTimeout(()=>{el.textContent=SAYINGS[i];el.style.opacity=1},250);}
+  else el.textContent=SAYINGS[i];
+}
+
+/* ---------- season ---------- */
+function autoSeason(){const m=new Date().getMonth()+1;return m>=3&&m<=5?'spring':m>=6&&m<=8?'summer':m>=9&&m<=11?'autumn':'winter'}
+let season=S.season||autoSeason();
+const SEASON_COPY={
+  spring:'벚꽃잎 날리는 길 따라, 오늘은 어느 절로 가볼까요',
+  summer:'계곡 물소리 시원한 절집에서 쉬어가요',
+  autumn:'붉게 물든 산길 따라 연꽃 한 송이씩 피워요',
+  winter:'하얀 눈 덮인 고요한 절에서 새해 해돋이를'
+};
+function setSeason(s,user){
+  season=s; document.body.dataset.season=s;
+  document.querySelectorAll('.sz').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s===s));
+  $('#sub').textContent=SEASON_COPY[s];
+  $('#heroArt').innerHTML=scene({id:'hero-juyuni',n:'산사'},s,1200,360,true);
+  if(user){S.season=s;save();}
+  fx.set(s); recIdx=0; renderRec(true); renderTrail(); if(openId&&byId[openId]) renderSheet(openId,false);
+}
+
+/* ---------- map ---------- */
+const CX=Math.cos(36.2*Math.PI/180)*100;
+const LON0=124.3, LAT0=38.75;
+const px=lo=>(lo-LON0)*CX, py=la=>(LAT0-la)*100;
+let bx0=1e9,by0=1e9,bx1=-1e9,by1=-1e9;
+GEO.forEach(f=>f.p.forEach(r=>r.forEach(([lo,la])=>{const x=px(lo),y=py(la);bx0=Math.min(bx0,x);bx1=Math.max(bx1,x);by0=Math.min(by0,y);by1=Math.max(by1,y)})));
+const PAD=14; const FULL=[bx0-PAD,by0-PAD,bx1-bx0+PAD*2,by1-by0+PAD*2];
+const ASP=FULL[2]/FULL[3];
+const svg=$('#map'); const NS='http://www.w3.org/2000/svg';
+let vb=FULL.slice();
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e;}
+function buildMap(){
+  svg.setAttribute('viewBox',FULL.join(' '));
+  const defs=el('defs',{},svg);
+  const pat=el('pattern',{id:'waves',width:24,height:12,patternUnits:'userSpaceOnUse'},defs);
+  el('path',{d:'M0 6 Q6 2 12 6 T24 6',fill:'none',stroke:'var(--sea-line)','stroke-width':.8},pat);
+  const flt=el('filter',{id:'brush',x:'-5%',y:'-5%',width:'110%',height:'110%'},defs);
+  el('feTurbulence',{type:'fractalNoise',baseFrequency:'.06',numOctaves:2,seed:3,result:'n'},flt);
+  el('feDisplacementMap',{in:'SourceGraphic',in2:'n',scale:2.2},flt);
+  const sh=el('filter',{id:'mkshadow',x:'-50%',y:'-50%',width:'200%',height:'200%'},defs);
+  el('feDropShadow',{dx:0,dy:1.2,stdDeviation:1.1,'flood-color':'#1f2b27','flood-opacity':.28},sh);
+  el('rect',{x:FULL[0]-200,y:FULL[1]-200,width:FULL[2]+400,height:FULL[3]+400,fill:'url(#waves)'},svg);
+  const land=el('g',{id:'land',filter:'url(#brush)'},svg);
+  const alt={gw:1,jl:1,jj:1};
+  GEO.forEach(f=>{
+    const d=f.p.map(r=>'M'+r.map(([lo,la])=>px(lo).toFixed(1)+' '+py(la).toFixed(1)).join('L')+'Z').join('');
+    const p=el('path',{d,class:'prov'+(alt[f.r]?' alt':''),'data-r':f.r},land);
+    p.addEventListener('click',()=>{if(!picking)setRegion(f.r)});
+  });
+  const lg=el('g',{},svg);
+  const RC={gg:[127.25,37.4],gw:[128.3,37.75],cc:[127.1,36.65],jl:[126.95,35.25],gs:[128.55,36.2],jj:[126.55,33.08]};
+  for(const r in RC){const t=el('text',{x:px(RC[r][0]),y:py(RC[r][1]),'text-anchor':'middle','font-size':r==='jj'?13:19,class:'rlabel'},lg);t.textContent=REG[r];}
+  const mg=el('g',{id:'markers'},svg);
+  T.forEach((t,i)=>makeMarker(t,200+i*16));
+  drawMarkers(); placeMarkers();
+  svg.addEventListener('click',onPick);
+}
+function makeMarker(t,delay){
+  const mg=$('#markers');
+  const g=el('g',{class:'mk','data-id':t.id,tabindex:0,role:'button','aria-label':t.n},mg);
+  const inn=el('g',{class:'in',style:'animation-delay:'+(delay||0)+'ms'},g);
+  t._g=g; t._in=inn; t._x=px(t.lo); t._y=py(t.la);
+  const lbl=el('text',{class:'lbl',x:0,y:19,'text-anchor':'middle'},g); lbl.textContent=t.n;
+  g.addEventListener('click',e=>{e.stopPropagation();openSheet(t.id)});
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSheet(t.id)}});
+}
+const LOTUS=(()=>{const pet=(r,f)=>`<path d="M0 4 C-3.4 0.6 -3.1 -4.6 0 -8.8 C3.1 -4.6 3.4 0.6 0 4Z" transform="rotate(${r} 0 4)" fill="${f}" stroke="var(--paper)" stroke-width="1.1" stroke-linejoin="round"/>`;
+  return `<g transform="translate(0 1.5)"><path d="M-7.5 4.6 Q0 9.6 7.5 4.6" stroke="var(--leaf)" stroke-width="2.4" fill="none" stroke-linecap="round"/>${pet(-72,'var(--lotus-2)')}${pet(72,'var(--lotus-2)')}${pet(-36,'var(--lotus)')}${pet(36,'var(--lotus)')}${pet(0,'var(--lotus)')}<circle cx="0" cy="1.6" r="1.3" fill="#ffe08a"/></g>`})();
+const LEAF=`<path d="M0 0 L2.5 -7.2 A7.6 7.6 0 1 1 -2.5 -7.2 Z" fill="var(--leaf)" stroke="var(--paper)" stroke-width="1.6" stroke-linejoin="round"/><path d="M0 0 L-6.2 3 M0 0 L6.2 3 M0 0 L0 6.6 M0 0 L-5.6 -3.6 M0 0 L5.6 -3.6" stroke="#fff" stroke-opacity=".55" stroke-width="1" stroke-linecap="round"/><circle r="1.3" fill="#fff" fill-opacity=".8"/>`;
+const FOOT=`<g transform="rotate(-10)"><path d="M-0.4 9.6 C-3.3 9.6 -4.1 7.1 -3.7 4.6 C-3.4 2.7 -5.4 0.9 -5.3 -1.7 C-5.2 -4.4 -3 -5.7 0 -5.7 C3.2 -5.7 5.4 -4.2 5.2 -1.4 C5 1.6 3.4 3.4 3.2 5.4 C3 7.9 2.1 9.6 -0.4 9.6Z"/><circle cx="-3.5" cy="-8.6" r="2.1"/><circle cx="-0.5" cy="-9.7" r="1.6"/><circle cx="2.1" cy="-9.3" r="1.4"/><circle cx="4.2" cy="-8" r="1.2"/><circle cx="5.7" cy="-6.1" r="1"/></g>`;
+function icon(k,px){return `<svg width="${px}" height="${px}" viewBox="-10 -10 20 20" aria-hidden="true">${k==='v'?LOTUS:LEAF}</svg>`}
+function drawMarkers(){
+  T.forEach(t=>{
+    const m=mk(t.id), g=t._in; g.innerHTML='';
+    g.setAttribute('filter','url(#mkshadow)');
+    if(rec&&rec.id===t.id) el('circle',{r:7,class:'ring'},g);
+    if(m.v){
+      g.insertAdjacentHTML('beforeend','<g transform="scale(1.15)">'+LOTUS+'</g>');
+    }else if(m.w){
+      g.insertAdjacentHTML('beforeend',LEAF);
+    }else{
+      el('circle',{r:5.5,fill:'var(--violet)',stroke:'var(--paper)','stroke-width':2.4},g);
+    }
+  });
+}
+function pxPerUnit(){return (svg.clientWidth||600)/vb[2]}
+function placeMarkers(){
+  const z=FULL[2]/vb[2], target=Math.min(12,6.5+(z-1)*2.6);
+  const s=target/(8*pxPerUnit());
+  T.forEach(t=>t._g.setAttribute('transform',`translate(${t._x.toFixed(2)} ${t._y.toFixed(2)}) scale(${s.toFixed(4)})`));
+}
+let anim=null;
+function zoomTo(target){
+  const from=vb.slice(), t0=performance.now(), dur=matchMedia('(prefers-reduced-motion: reduce)').matches?1:800;
+  cancelAnimationFrame(anim);
+  const step=now=>{
+    let k=Math.min(1,(now-t0)/dur); k=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+    vb=from.map((v,i)=>v+(target[i]-v)*k);
+    svg.setAttribute('viewBox',vb.map(v=>v.toFixed(2)).join(' ')); placeMarkers();
+    if(k<1) anim=requestAnimationFrame(step);
+  };
+  anim=requestAnimationFrame(step);
+}
+function bboxFor(r){
+  const ts=T.filter(t=>t.r===r);
+  let x0=Math.min(...ts.map(t=>t._x)),x1=Math.max(...ts.map(t=>t._x)),y0=Math.min(...ts.map(t=>t._y)),y1=Math.max(...ts.map(t=>t._y));
+  const pad=34; x0-=pad;x1+=pad;y0-=pad;y1+=pad+10;
+  let w=Math.max(x1-x0,150),h=Math.max(y1-y0,150/ASP);
+  if(w/h>ASP) h=w/ASP; else w=h*ASP;
+  const cx=(x0+x1)/2,cy=(y0+y1)/2;
+  return [cx-w/2,cy-h/2,w,h];
+}
+
+/* ---------- region ---------- */
+let region='all', listFilter='all';
+function buildChips(){
+  const c=$('#chips'); c.innerHTML='';
+  [['all','전국'],...Object.entries(REG)].forEach(([k,v])=>{
+    const b=document.createElement('button'); b.className='chip'; b.dataset.r=k;
+    b.innerHTML=`${v} <small></small>`; b.addEventListener('click',()=>setRegion(k)); c.appendChild(b);
+  });
+  const fr=$('#feat'); fr.innerHTML='<span class="feat-l">골라보기</span>';
+  Object.entries(FEAT).forEach(([k,x])=>{const e=document.createElement('button');e.className='chip easychip';e.dataset.k=k;e.setAttribute('aria-pressed','false');
+    e.innerHTML=`${x.ic?`<span class="ic">${icon(x.ic,18)}</span>`:''}${x.n}`;e.addEventListener('click',()=>setFeat(k));fr.appendChild(e);});
+}
+function setFeat(k){
+  FEAT[k].on=!FEAT[k].on; document.querySelector(`.easychip[data-k="${k}"]`).setAttribute('aria-pressed',FEAT[k].on); applyVis(); renderList();
+  const n=T.filter(t=>passF(t)&&(region==='all'||t.r===region)).length;
+  const on=Object.values(FEAT).filter(x=>x.on).map(x=>x.n);
+  toast(on.length?(n?`${on.join(' · ')} ${n}곳을 보여드려요`:'조건에 맞는 절이 없어요. 골라보기를 하나 풀어보세요'):'모든 절을 다시 보여드려요');
+}
+function setRegion(r){
+  if(region===r && r!=='all'){ r='all'; }
+  region=r;
+  document.querySelectorAll('.chip[data-r]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===r));
+  document.querySelectorAll('.prov').forEach(p=>p.classList.toggle('dim',r!=='all'&&p.dataset.r!==r));
+  applyVis();
+  svg.classList.toggle('zoomed',r!=='all');
+  $('#mapback').hidden=r==='all';
+  $('#listTitle').textContent=r==='all'?'전국 사찰':REG_FULL[r]+' 사찰';
+  zoomTo(r==='all'?FULL:bboxFor(r));
+  renderList();
+}
+$('#mapback').addEventListener('click',()=>setRegion('all'));
+
+/* ---------- map zoom & pan ---------- */
+function clampVB(v){
+  let [x,y,w,h]=v; const minW=FULL[2]/14;
+  if(w>FULL[2]){w=FULL[2];h=FULL[3];} if(w<minW){w=minW;h=minW/ASP;}
+  x=Math.max(FULL[0],Math.min(FULL[0]+FULL[2]-w,x)); y=Math.max(FULL[1],Math.min(FULL[1]+FULL[3]-h,y));
+  return [x,y,w,h];
+}
+function setVB(v){cancelAnimationFrame(anim);vb=clampVB(v);svg.setAttribute('viewBox',vb.map(n=>n.toFixed(2)).join(' '));placeMarkers();svg.classList.toggle('zoomed',vb[2]<FULL[2]*.6);$('#mapback').hidden=region==='all'&&vb[2]>=FULL[2]*.99;}
+function zoomAt(k,cx,cy){const w=vb[2]/k,h=vb[3]/k;setVB([cx-(cx-vb[0])/k,cy-(cy-vb[1])/k,w,h]);}
+function toMap(clientX,clientY){const r=svg.getBoundingClientRect();return [vb[0]+(clientX-r.left)/r.width*vb[2],vb[1]+(clientY-r.top)/r.height*vb[3]];}
+function smoothZoom(k){const to=clampVB([vb[0]+vb[2]*(1-1/k)/2,vb[1]+vb[3]*(1-1/k)/2,vb[2]/k,vb[3]/k]);zoomTo(to);setTimeout(()=>{svg.classList.toggle('zoomed',vb[2]<FULL[2]*.6);$('#mapback').hidden=region==='all'&&vb[2]>=FULL[2]*.99;},820);}
+$('#zin').addEventListener('click',()=>smoothZoom(1.8));
+$('#zout').addEventListener('click',()=>smoothZoom(1/1.8));
+svg.addEventListener('wheel',e=>{e.preventDefault();const [mx,my]=toMap(e.clientX,e.clientY);zoomAt(Math.exp(-e.deltaY*0.0022),mx,my);},{passive:false});
+(()=>{const pts=new Map();let start=null,moved=false;
+  svg.addEventListener('pointerdown',e=>{pts.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=false;start={vb:vb.slice(),pts:new Map([...pts].map(([k,v])=>[k,{...v}]))};});
+  svg.addEventListener('pointermove',e=>{
+    if(!pts.has(e.pointerId)||!start)return; pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    const r=svg.getBoundingClientRect(), upp=start.vb[2]/r.width;
+    const cur=[...pts.values()], st=[...start.pts.values()];
+    if(cur.length===1&&st.length>=1){
+      const dx=cur[0].x-st[0].x, dy=cur[0].y-st[0].y;
+      if(!moved&&Math.hypot(dx,dy)<6)return;
+      if(!moved){moved=true;try{svg.setPointerCapture(e.pointerId)}catch(_){};svg.classList.add('dragging');}
+      setVB([start.vb[0]-dx*upp,start.vb[1]-dy*upp,start.vb[2],start.vb[3]]);
+    } else if(cur.length>=2&&st.length>=2){
+      moved=true;
+      const d0=Math.hypot(st[0].x-st[1].x,st[0].y-st[1].y)||1, d1=Math.hypot(cur[0].x-cur[1].x,cur[0].y-cur[1].y)||1;
+      const k=d1/d0, c0x=(st[0].x+st[1].x)/2, c0y=(st[0].y+st[1].y)/2, c1x=(cur[0].x+cur[1].x)/2, c1y=(cur[0].y+cur[1].y)/2;
+      const mx=start.vb[0]+(c0x-r.left)*upp, my=start.vb[1]+(c0y-r.top)*upp;
+      const w=start.vb[2]/k,h=start.vb[3]/k, upp2=w/r.width;
+      setVB([mx-(c1x-r.left)*upp2,my-(c1y-r.top)*upp2,w,h]);
+    }
+  });
+  const end=e=>{pts.delete(e.pointerId);svg.classList.remove('dragging');if(pts.size)start={vb:vb.slice(),pts:new Map([...pts].map(([k,v])=>[k,{...v}]))};};
+  svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  svg.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+})();
+
+/* ---------- list ---------- */
+function renderList(){
+  const q=$('#q').value.trim();
+  let ts=T.filter(t=>(region==='all'||t.r===region));
+  if(listFilter==='v') ts=ts.filter(t=>mk(t.id).v);
+  if(listFilter==='w') ts=ts.filter(t=>mk(t.id).w&&!mk(t.id).v);
+  ts=ts.filter(passF);
+  if(q) ts=ts.filter(t=>(t.n+t.a+REG[t.r]+t.h).includes(q));
+  const L=$('#list');
+  if(!ts.length){L.innerHTML=`<div class="empty">${listFilter==='v'?'아직 다녀온 곳이 없어요.<br>사찰을 눌러 "다녀왔어요"를 눌러보세요.':listFilter==='w'?'"가고 싶어요"를 눌러<br>가고 싶은 곳을 모아두세요.':'찾는 사찰이 없어요.'}</div>`;return;}
+  L.innerHTML=ts.map(t=>{const m=mk(t.id);const c=m.v?'v':m.w?'w':'';
+    return `<button class="row ${c}" data-id="${t.id}"><span class="dot">${t.n[0]}</span><span style="min-width:0"><span class="nm">${t.n}</span><span class="ad">${t.a}</span></span>${m.v?'<span class="tag v">다녀옴</span>':m.w?'<span class="tag w">가고 싶어요</span>':easy(t)?'<span class="tag e">계단 적어요</span>':t.ts?'<span class="tag x">템플스테이</span>':''}</button>`}).join('');
+}
+$('#list').addEventListener('click',e=>{const b=e.target.closest('.row');if(b)openSheet(b.dataset.id)});
+$('#q').addEventListener('input',renderList);
+const FNAME={v:'다녀온 곳',w:'가고 싶은 곳'};
+function applyVis(){
+  T.forEach(t=>{const m=mk(t.id);const hide=(region!=='all'&&t.r!==region)||!passF(t)||(listFilter==='v'&&!m.v)||(listFilter==='w'&&!(m.w&&!m.v));t._g.classList.toggle('hide',hide);});
+  $('#maptitle').textContent=(region==='all'?'전국':REG_FULL[region])+(listFilter!=='all'?' · '+FNAME[listFilter]+'만':'');
+}
+function setFilter(f,fromCard){
+  if(fromCard&&listFilter===f) f='all';
+  listFilter=f;
+  document.querySelectorAll('.tab,.lg,.pbtn').forEach(x=>x.setAttribute('aria-pressed',x.dataset.f===f));
+  applyVis(); renderList();
+  if(f!=='all'){
+    const n=T.filter(t=>f==='v'?mk(t.id).v:(mk(t.id).w&&!mk(t.id).v)).length;
+    toast(n?`${FNAME[f]} ${n}곳만 지도에 보여드려요`:(f==='v'?'아직 다녀온 곳이 없어요. 첫 연꽃을 피워보세요':'아직 가고 싶은 곳이 없어요. "가고 싶어요"를 눌러 담아보세요'));
+    if(fromCard){const mc=document.querySelector('.mapcard').getBoundingClientRect();if(mc.top<0||mc.bottom>innerHeight)document.querySelector('.mapcard').scrollIntoView({behavior:'smooth',block:'center'});}
+  }
+}
+document.querySelectorAll('.tab,.lg').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f,false)));
+document.querySelectorAll('.pbtn').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f,true)));
+
+/* ---------- progress, rank, stamp book ---------- */
+const RANKS=[[0,'첫걸음 순례자'],[1,'새내기 순례자'],[5,'꽃길 순례자'],[15,'팔도 산사객'],[30,'산사 박사'],[50,'산사 명인'],[70,'팔도 산사 큰보살']];
+let lastRank=null;
+function renderProgress(){
+  const v=T.filter(t=>mk(t.id).v).length, w=T.filter(t=>mk(t.id).w&&!mk(t.id).v).length;
+  $('#pNum').textContent=v; $('#pOf').textContent='/ '+T.length+'곳'; $('#pV').textContent=v; $('#pW').textContent=w;
+  $('#ringFg').style.strokeDashoffset=(263.9*(1-v/T.length)).toFixed(1);
+  $('#pTitle').textContent= v===0?'첫 연꽃을 기다리고 있어요': v<5?'순례길이 시작됐어요': v<15?'발걸음이 차곡차곡 쌓여요': v<40?'벌써 이만큼 다녀왔어요': v<T.length?'팔도 완주가 눈앞이에요':'전국 산사 완주! 정말 대단해요';
+  let ri=0; RANKS.forEach((r,i)=>{if(v>=r[0])ri=i});
+  const rk=$('#rank'); rk.textContent=RANKS[ri][1];
+  if(lastRank!==null&&ri>lastRank){rk.classList.remove('up');void rk.offsetWidth;rk.classList.add('up');setTimeout(()=>toast(`축하해요! 이제 "${RANKS[ri][1]}"이에요`),5800);}
+  lastRank=ri;
+  $('#nextRank').textContent=RANKS[ri+1]?`${RANKS[ri+1][0]-v}곳 더 다녀오면 "${RANKS[ri+1][1]}"`:'';
+  document.querySelectorAll('.chip[data-r]').forEach(b=>{const r=b.dataset.r;const ts=T.filter(t=>r==='all'||t.r===r);b.querySelector('small').textContent=ts.filter(t=>mk(t.id).v).length+'/'+ts.length;});
+}
+function renderBook(fresh){
+  $('#regions').innerHTML=Object.entries(REG).map(([r,name])=>{
+    const ts=T.filter(t=>t.r===r), v=ts.filter(t=>mk(t.id).v).length;
+    return `<div class="rbox"><h3>${REG_FULL[r]}<small>${v} / ${ts.length}</small></h3><div class="rbar"><i style="width:${(v/ts.length*100).toFixed(0)}%"></i></div><div class="seals">${
+      ts.map(t=>{const m=mk(t.id);return `<button class="st ${m.v?'v':m.w?'w':''} ${fresh===t.id?'fresh':''}" data-id="${t.id}" aria-label="${t.n}${m.v?' 다녀옴':''}"><span class="s">${m.v?`<svg width="38" height="38" viewBox="-10 -11 20 20" aria-hidden="true">${LOTUS}</svg>`:t.n[0]}</span>${t.n.replace('(완주)','')}</button>`}).join('')}</div></div>`;
+  }).join('');
+}
+$('#regions').addEventListener('click',e=>{const b=e.target.closest('.st');if(b)openSheet(b.dataset.id)});
+
+/* ---------- footprints ---------- */
+function photoUrl(p){return PHOTOS[p.id]||''}
+function renderTrail(){
+  const vs=T.filter(t=>mk(t.id).v).sort((a,b)=>(mk(b.id).vd||'').localeCompare(mk(a.id).vd||'')||(mk(b.id).u||0)-(mk(a.id).u||0));
+  const box=$('#trail');
+  if(!vs.length){box.innerHTML=`<div class="trail-empty">첫 연꽃을 피우면 이곳에<br>여행 일기가 한 장씩 쌓여요.<br><br>다녀온 날짜와 메모, 사진도<br>함께 남아요.</div>`;return;}
+  box.innerHTML=vs.map(t=>{const m=mk(t.id);const ph=(m.ph||[])[0];
+    return `<button class="foot" data-id="${t.id}"><div class="pic">${ph?`<img src="${photoUrl(ph)}" alt="${t.n}에서 찍은 사진" loading="lazy">`:scene(t,season,400,300,true)}<span class="mini"><svg width="30" height="30" viewBox="-10 -11 20 20" aria-hidden="true">${LOTUS}</svg></span></div><div class="tx"><div class="dt">${fmt(m.vd)||'날짜 미정'}</div><div class="fn">${t.n}</div>${m.memo?`<div class="memo">${esc(m.memo)}</div>`:`<div class="memo">${REG_FULL[t.r]}</div>`}</div></button>`}).join('');
+}
+$('#trail').addEventListener('click',e=>{const b=e.target.closest('.foot');if(b)openSheet(b.dataset.id)});
+
+/* ---------- recommendation ---------- */
+let rec=null, recIdx=0;
+function recPool(){
+  const un=T.filter(t=>!mk(t.id).v);
+  const inS=un.filter(t=>t.s.includes(season));
+  return inS.length?inS:un;
+}
+function dayShuffle(arr){const d=new Date();let seed=d.getFullYear()*400+d.getMonth()*32+d.getDate();const a=arr.slice();for(let i=a.length-1;i>0;i--){seed=(seed*9301+49297)%233280;const j=Math.floor(seed/233280*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a.sort((x,y)=>(mk(y.id).w?1:0)-(mk(x.id).w?1:0));}
+function dist(a,b){const R=6371,toR=Math.PI/180;const dLa=(b.la-a.la)*toR,dLo=(b.lo-a.lo)*toR;const h=Math.sin(dLa/2)**2+Math.cos(a.la*toR)*Math.cos(b.la*toR)*Math.sin(dLo/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
+function nearest(t,n,onlyUn){return T.filter(x=>x.id!==t.id&&(!onlyUn||!mk(x.id).v)).map(x=>[x,dist(t,x)]).sort((a,b)=>a[1]-b[1]).slice(0,n);}
+function renderRec(animate){
+  const pool=dayShuffle(recPool());
+  const box=$('#recInner');
+  if(!pool.length){rec=null;box.innerHTML=`<h2>모든 사찰에 연꽃을 피웠어요!</h2><p class="muted">정말 대단해요, 주유니.<br>좋았던 곳을 다른 계절에 다시 가보는 건 어떨까요?</p>`;drawMarkers();return;}
+  rec=pool[recIdx%pool.length];
+  const why=rec.w[season]||Object.values(rec.w)[0]||'주유니가 직접 추가한 절이에요';
+  const inSeason=rec.s.includes(season);
+  const lastV=T.filter(t=>mk(t.id).v).sort((a,b)=>(mk(b.id).vd||'').localeCompare(mk(a.id).vd||'')||(mk(b.id).u||0)-(mk(a.id).u||0))[0];
+  let nextHTML='';
+  if(lastV){const [nt,km]=nearest(lastV,1,true)[0]||[];if(nt)nextHTML=`<div class="next"><span class="badge">${nt.n[0]}</span><button data-open="${nt.id}"><span class="muted">최근 다녀온 ${lastV.n}에서 ${Math.round(km)}km</span><br><b>다음은 ${nt.n}</b> 어떠세요? ›</button></div>`;}
+  const html=`<div class="eyebrow">${inSeason?'이번 '+SEASON_KO[season]+'엔 여기 어때요?':'오늘의 추천 사찰'}</div>
+    <div class="rec-scene">${scene(rec,season,520,230)}</div>
+    <div class="rec-name">${rec.n}<small>${rec.h?rec.h+' · ':''}${REG_FULL[rec.r]}</small></div>
+    <div class="why">${inSeason?SEASON_KO[season]+' 추천 · ':''}${why}</div>
+    <div class="btnrow"><button class="btn primary" data-open="${rec.id}">자세히 보기</button><button class="btn ghost" id="recNext">다른 곳 추천받기 ↻</button></div>${nextHTML}`;
+  if(animate && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    box.classList.add('flip');
+    setTimeout(()=>{box.innerHTML=html;box.classList.remove('flip');},300);
+  } else box.innerHTML=html;
+  drawMarkers();
+}
+$('#recInner').addEventListener('click',e=>{
+  const o=e.target.closest('[data-open]'); if(o){openSheet(o.dataset.open);return;}
+  if(e.target.closest('#recNext')){recIdx++;renderRec(true);}
+});
+
+/* ---------- scene illustration ---------- */
+function rng(str){let h=2166136261;for(const c of str)h=Math.imul(h^c.charCodeAt(0),16777619);return()=>{h^=h<<13;h^=h>>>17;h^=h<<5;return((h>>>0)%10000)/10000}}
+const PAL={
+  spring:{sky:['#f8e3ea','#e2f0f4'],sun:'#fff3d6',m:['#cddcc8','#abc9a4','#88b281'],tree:['#f4c3d0','#f8dbe3','#eaa6bb','#fbe9ee'],roof:'#3d4b48'},
+  summer:{sky:['#bfe0ef','#ecf7f3'],sun:'#fff8dc',m:['#a3c6b3','#72a789','#4d8665'],tree:['#3f7d4f','#5c9b5f','#2f6a45','#79b06b'],roof:'#33403d'},
+  autumn:{sky:['#f5d8b5','#fbefe3'],sun:'#f6b16a',m:['#dbb892','#cc8d5f','#a9663e'],tree:['#d9482b','#e9822e','#f0b53a','#b8321f','#c75a2a'],roof:'#3a3532'},
+  winter:{sky:['#d2dce5','#f0f4f7'],sun:'#f6f8fa',m:['#e1e8ee','#cbd5de','#b0bdc8'],tree:['#f6f8fa','#e4eaef','#d2dbe2'],roof:'#4a5258'}
+};
+function scene(t,s,W,H,slice){
+  const R=rng(t.id), P=PAL[s]; const id='g'+t.id+s+W+(slice?'s':'');
+  let o=`<svg viewBox="0 0 ${W} ${H}" xmlns="${NS}" ${slice?'preserveAspectRatio="xMidYMid slice"':''} role="img" aria-label="${t.n} ${SEASON_KO[s]} 풍경 그림"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.sky[0]}"/><stop offset="1" stop-color="${P.sky[1]}"/></linearGradient></defs><rect width="${W}" height="${H}" fill="url(#${id})"/>`;
+  const hero=W/H>2.5;
+  o+=`<circle cx="${W*(hero?.82:.15+R()*.7)}" cy="${H*(.18+R()*.12)}" r="${H*.09}" fill="${P.sun}" opacity=".9"/>`;
+  const ridge=(base,amp,col,ph)=>{let d=`M0 ${H}`;for(let x=0;x<=W;x+=W/48){const y=base-amp*(Math.sin(x/W*Math.PI*(1.4+ph)+ph*7)*.6+Math.sin(x/W*Math.PI*4.3+ph*3)*.25+Math.sin(x/W*Math.PI*9+ph)*.1);d+=` L${x.toFixed(1)} ${y.toFixed(1)}`}return `<path d="${d} L${W} ${H}Z" fill="${col}"/>`};
+  o+=ridge(H*.45,H*.16,P.m[0],R()*3)+ridge(H*.6,H*.13,P.m[1],R()*3);
+  if(s==='winter') o+=`<path d="M0 ${H*.42} Q${W*.3} ${H*.3} ${W*.6} ${H*.4} T${W} ${H*.36}" stroke="#fff" stroke-width="3" fill="none" opacity=".7"/>`;
+  const gy=H*.8; o+=ridge(gy,H*.05,P.m[2],R()*3);
+  const cx=hero?W*.74:W*(.38+R()*.24), bw=hero?H*.62:W*.26, by=gy-H*.02;
+  const pag=hero||R()>.45, px2=hero?cx-bw*.95:cx+(R()>.5?1:-1)*bw*.85;
+  const hallH=H*.15;
+  o+=`<rect x="${cx-bw*.55}" y="${by}" width="${bw*1.1}" height="${H*.05}" fill="#bfb6a8"/>`;
+  o+=`<rect x="${cx-bw*.42}" y="${by-hallH}" width="${bw*.84}" height="${hallH}" fill="#efe6d2"/>`;
+  for(let i=0;i<=4;i++){const x=cx-bw*.42+i*bw*.84/4;o+=`<rect x="${x-2}" y="${by-hallH}" width="4" height="${hallH}" fill="#8e2f22"/>`}
+  o+=`<rect x="${cx-bw*.42}" y="${by-hallH}" width="${bw*.84}" height="${hallH*.18}" fill="#2f6a5c"/>`;
+  const ry=by-hallH-2, rw=bw*1.25;
+  o+=`<path d="M${cx-rw/2-10} ${ry-2} Q${cx-rw/2+2} ${ry+6} ${cx-rw/2+16} ${ry+1} L${cx-rw*.3} ${ry-hallH*.55} Q${cx} ${ry-hallH*.72} ${cx+rw*.3} ${ry-hallH*.55} L${cx+rw/2-16} ${ry+1} Q${cx+rw/2-2} ${ry+6} ${cx+rw/2+10} ${ry-2} Q${cx} ${ry-8} ${cx-rw/2-10} ${ry-2}Z" fill="${P.roof}"/>`;
+  if(s==='winter') o+=`<path d="M${cx-rw*.3} ${ry-hallH*.55} Q${cx} ${ry-hallH*.78} ${cx+rw*.3} ${ry-hallH*.55}" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>`;
+  if(pag){let tw=bw*.32,y=by;for(let i=0;i<4;i++){const th=H*.05;o+=`<rect x="${px2-tw/2}" y="${y-th}" width="${tw}" height="${th*.62}" fill="#b9b2a5"/><rect x="${px2-tw*.62}" y="${y-th-2}" width="${tw*1.24}" height="4" fill="#9a9285"/>`;if(s==='winter')o+=`<rect x="${px2-tw*.62}" y="${y-th-4}" width="${tw*1.24}" height="2.5" fill="#fff"/>`;y-=th;tw*=.82}o+=`<rect x="${px2-1.5}" y="${y-10}" width="3" height="10" fill="#9a9285"/>`;}
+  const nT=hero?22:9+Math.floor(R()*5);
+  for(let i=0;i<nT;i++){
+    const x=hero?W*.4+R()*W*.6:R()*W; if(Math.abs(x-cx)<bw*.6||Math.abs(x-px2)<bw*.2) continue;
+    const y=gy+R()*H*.12-4, r=H*(.045+R()*.05);
+    o+=`<rect x="${x-1.5}" y="${y}" width="3" height="${r*.9}" fill="#5a4636"/>`;
+    for(let k=0;k<3;k++) o+=`<circle cx="${(x+(R()-.5)*r).toFixed(1)}" cy="${(y-R()*r*.6).toFixed(1)}" r="${(r*(.55+R()*.4)).toFixed(1)}" fill="${P.tree[Math.floor(R()*P.tree.length)]}"/>`;
+  }
+  const nP=hero?60:14;
+  if(s==='winter'){for(let i=0;i<nP*2;i++)o+=`<circle cx="${(R()*W).toFixed(1)}" cy="${(R()*H).toFixed(1)}" r="${(1+R()*2).toFixed(1)}" fill="#fff" opacity=".85"/>`}
+  if(s==='autumn'){for(let i=0;i<nP;i++)o+=`<circle cx="${(R()*W).toFixed(1)}" cy="${(gy+R()*H*.18).toFixed(1)}" r="${(1.5+R()*2).toFixed(1)}" fill="${P.tree[i%P.tree.length]}"/>`}
+  if(s==='spring'){for(let i=0;i<nP;i++){const ex=(R()*W).toFixed(1),ey=(R()*H*.8).toFixed(1);o+=`<ellipse cx="${ex}" cy="${ey}" rx="3.2" ry="1.8" fill="#f2b6c7" opacity=".85" transform="rotate(${(R()*180).toFixed(0)} ${ex} ${ey})"/>`}}
+  return o+'</svg>';
+}
+
+/* ---------- sheet ---------- */
+let openId=null, lastFocus=null;
+function openSheet(id){
+  lastFocus=document.activeElement; openId=id;
+  const sh=$('#sheet'), bd=$('#backdrop');
+  renderSheet(id,false);
+  sh.hidden=false; bd.hidden=false;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{sh.classList.add('on');bd.classList.add('on');}));
+  sh.scrollTop=0;
+  setTimeout(()=>{const c=sh.querySelector('.closex');c&&c.focus({preventScroll:true})},60);
+}
+function closeSheet(){
+  const sh=$('#sheet'), bd=$('#backdrop');
+  sh.classList.remove('on'); bd.classList.remove('on'); openId=null;
+  setTimeout(()=>{if(!openId){sh.hidden=true;bd.hidden=true;}},450);
+  lastFocus&&lastFocus.focus&&lastFocus.focus({preventScroll:true});
+}
+$('#backdrop').addEventListener('click',closeSheet);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const lb=document.querySelector('.lightbox');if(lb){lb.remove();return;}if(openId)closeSheet()}});
+function today(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+const brk=t=>String(t).replace(/([.!?])\s+(?=\S)/g,'$1<br>');
+function kdate(d){if(!d)return '날짜를 골라주세요';const [y,m,dd]=d.split('-');return `${y}년 ${+m}월 ${+dd}일`}
+function fmt(d){if(!d)return '';const [y,m,dd]=d.split('-');return `${y}.${m}.${dd}`}
+let uploading=false;
+function renderSheet(id,stampAnim){
+  const t=byId[id], m=mk(id), sh=$('#sheet');
+  const near=nearest(t,3,false);
+  const q=encodeURIComponent(t.n.replace('(완주)','')+' '+t.a.split(' ').slice(0,2).join(' '));
+  const photos=m.ph||[];
+  const photoBlock = (photos.length||ASSETS)?`<div><p class="sec-t">다녀온 사진</p><div class="photos">${photos.map((p,i)=>`<div class="ph"><img src="${photoUrl(p)}" alt="${t.n} 사진 ${i+1}" data-big="${i}">${ASSETS?`<button class="rm" data-rm="${i}" aria-label="사진 빼기">✕</button>`:''}</div>`).join('')}${ASSETS?`<label class="upl"><b>+</b>${uploading?'올리는 중…':'사진 올리기'}<input type="file" id="phIn" accept="image/*" multiple></label>`:''}</div>${!ASSETS?'<p class="note">로그인하면 사진을 올릴 수 있어요.</p>':''}</div>`:`<div><p class="sec-t">다녀온 사진</p><p class="note">다녀와서 찍은 사진을 여기에 올릴 수 있어요.<br>위쪽에서 구글로 로그인하면 "사진 올리기" 버튼이 나타나요.</p></div>`;
+  sh.innerHTML=`<div class="sheet-scene">${photos[0]?`<img src="${photoUrl(photos[0])}" alt="" style="width:100%;aspect-ratio:640/300;object-fit:cover;display:block">`:scene(t,season,640,300)}
+    <button class="closex" aria-label="닫기">✕</button>
+    ${m.v?`<div class="splat ${stampAnim?'go':''}"></div><div class="bigseal ${stampAnim?'go':''}"><svg width="46" height="46" viewBox="-10 -11 20 20" aria-hidden="true">${LOTUS}</svg><span class="bs-date">${fmt(m.vd)}</span></div>`:''}</div>
+  <div class="sheet-body">
+    <div><h2 id="sheetTitle">${t.n}<small>${t.h}</small></h2>
+    <div class="meta" style="margin-top:8px"><span>${REG_FULL[t.r]}</span>${t.custom?'<span>주유니가 추가한 절</span>':''}${easy(t)?'<span style="background:var(--leaf-soft);color:var(--leaf)">계단 적은 절</span>':''}${t.ts?'<span style="background:var(--gold-soft);color:var(--gold)">템플스테이</span>':''}${t.food?'<span style="background:var(--gold-soft);color:var(--gold)">사찰음식</span>':''}${COURSES.filter(c=>c.ids.includes(t.id)).map(c=>`<span style="background:var(--lotus-soft);color:var(--lotus)">${c.n}</span>`).join('')}${t.s.map(s=>`<span>${SEASON_KO[s]} 추천</span>`).join('')}</div></div>
+    <p class="desc">${t.custom?esc(t.d):brk(t.d)}</p>
+    ${t.w[season]?`<div class="why" style="margin:0"><b>${SEASON_KO[season]}에 가면</b> · ${t.w[season]}</div>`:''}
+    <div class="actions">
+      <button class="btn ${m.v?'line':'seal'}" id="bVisit">${m.v?'아직 안 갔어요':'다녀왔어요'}</button>
+      <button class="btn leafb wishbtn" id="bWish" aria-pressed="${!!m.w}">${icon('w',22)} ${m.w?'가고 싶은 곳':'가고 싶어요'}</button>
+    </div>
+    ${m.v?`<div class="vdate"><span class="vd-ic">${icon('v',30)}</span><span class="vd-tx"><small>다녀온 날</small><b>${kdate(m.vd)}</b></span><label class="vd-ch">날짜 바꾸기<input type="date" id="vd" value="${m.vd||''}" aria-label="다녀온 날 바꾸기"></label></div>`:''}
+    <div class="info">
+      <div><div class="k">전화번호</div>${t.t?`<div class="phoneline"><span class="phone">${t.t}</span><span class="btnrow"><a class="btn primary" href="tel:${t.t.replace(/-/g,'')}">전화 걸기</a><button class="btn ghost" id="bCopy">번호 복사</button></span></div>`:`<div class="v" style="user-select:auto">네이버 지도에서 전화번호를 확인해 주세요</div>`}</div>
+      <div><div class="k">주소</div><div class="v">${t.a||'주소 정보가 없어요'}</div></div>
+      <div><div class="k" style="margin-bottom:6px">가는 길 · 계단</div><div class="acc">
+        <div><b>찾아가기</b><span class="${t.car?'':'unk'}">${t.car?CAR_TXT[t.car]:'확인이 어려워요.<br>가시기 전에 전화로 물어보세요'}</span></div>
+        <div><b>계단</b><span class="${t.st?'':'unk'}">${t.st?ST_TXT[t.st]:'확인이 어려워요.<br>가시기 전에 전화로 물어보세요'}</span></div>
+        ${t.ts?`<div><b>체험</b><span>템플스테이를 운영해요. 예약은 <a href="https://www.templestay.com" target="_blank" rel="noopener">템플스테이 누리집</a>에서 할 수 있어요</span></div>`:''}
+        ${t.food?`<div><b>절밥</b><span>${t.food}</span></div>`:''}
+        ${t.car||t.st||t.ts?'<p class="note" style="margin:2px 0 0">대략적인 참고 정보예요.<br>운영 여부나 길 사정은 바뀔 수 있으니 가시기 전에 확인해 주세요.</p>':''}
+      </div></div>
+    </div>
+    ${photoBlock}
+    <div><label class="sec-t" for="memo" style="display:block">메모</label><textarea id="memo" placeholder="누구랑 갔는지, 무엇이 좋았는지 적어두세요">${esc(m.memo||'')}</textarea></div>
+    <div><p class="sec-t">절 사진 · 길찾기</p><div class="links">
+      <a class="btn gold" href="https://search.naver.com/search.naver?where=image&query=${q}" target="_blank" rel="noopener">사진 구경하기</a>
+      <a class="btn line" href="https://map.naver.com/p/search/${q}" target="_blank" rel="noopener">네이버 지도</a>
+      <a class="btn line" href="https://map.kakao.com/link/search/${encodeURIComponent(t.n.replace('(완주)',''))}" target="_blank" rel="noopener">카카오맵</a>
+    </div></div>
+    ${t.custom?`<div><button class="btn line danger" id="bDel">이 절을 목록에서 지우기</button></div>`:''}
+    <div><p class="sec-t">가까운 사찰</p><div class="near">${near.map(([x,km])=>`<button data-go="${x.id}">${mk(x.id).v?'● ':''}${x.n} · ${Math.round(km)}km</button>`).join('')}</div></div>
+  </div>`;
+  sh.querySelector('.closex').onclick=closeSheet;
+  sh.querySelector('#bVisit').onclick=()=>toggleVisit(id);
+  sh.querySelector('#bWish').onclick=()=>toggleWish(id);
+  const del=sh.querySelector('#bDel');
+  if(del) del.onclick=()=>{ if(del.dataset.sure){removeCustom(id);} else {del.dataset.sure=1;del.textContent='한 번 더 누르면 지워져요';del.style.background='var(--seal)';del.style.color='#fff';} };
+  const cp=sh.querySelector('#bCopy');
+  if(cp) cp.onclick=async()=>{try{await navigator.clipboard.writeText(t.t);toast('전화번호를 복사했어요')}catch(err){const r=document.createRange();r.selectNodeContents(sh.querySelector('.phone'));const s=getSelection();s.removeAllRanges();s.addRange(r);toast('번호를 선택했어요. 길게 눌러 복사하세요')}};
+  const vd=sh.querySelector('#vd'); if(vd) vd.onclick=()=>{try{vd.showPicker()}catch(e){}}; if(vd) vd.onchange=()=>{setMark(id,{vd:vd.value});renderSheet(id,false);renderTrail();renderRec(false)};
+  const memo=sh.querySelector('#memo'); memo.oninput=()=>{clearTimeout(memo.t);memo.t=setTimeout(()=>{setMark(id,{memo:memo.value});renderTrail();},500)};
+  sh.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{openId=b.dataset.go;renderSheet(b.dataset.go,false);sh.scrollTop=0;});
+  sh.querySelectorAll('[data-big]').forEach(img=>img.onclick=()=>{const lb=document.createElement('div');lb.className='lightbox';lb.innerHTML=`<img src="${img.src}" alt="${img.alt}">`;lb.onclick=()=>lb.remove();document.body.appendChild(lb);});
+  sh.querySelectorAll('[data-rm]').forEach(b=>b.onclick=async()=>{const i=+b.dataset.rm;const list=(mk(id).ph||[]).slice();const [gone]=list.splice(i,1);setMark(id,{ph:list});renderSheet(id,false);renderTrail();toast('사진을 뺐어요');try{await ASSETS.delete(gone.id)}catch(e){}});
+  const inp=sh.querySelector('#phIn'); if(inp) inp.onchange=()=>uploadPhotos(id,[...inp.files]);
+}
+async function shrink(file){
+  try{
+    const bmp=await createImageBitmap(file);
+    const k=Math.min(1,1100/Math.max(bmp.width,bmp.height));
+    const c=document.createElement('canvas');c.width=Math.round(bmp.width*k);c.height=Math.round(bmp.height*k);
+    c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);
+    return await new Promise(r=>c.toBlob(b=>r(b||file),'image/jpeg',.72));
+  }catch(e){return file}
+}
+async function uploadPhotos(id,files){
+  if(!ASSETS||!files.length)return;
+  uploading=true; renderSheet(id,false);
+  let ok=0;
+  for(const f of files.slice(0,6)){
+    try{const blob=await shrink(f);const r=await ASSETS.upload(blob);const list=(mk(id).ph||[]).slice();list.push({id:r.id});setMark(id,{ph:list});ok++;}
+    catch(e){toast('사진을 올리지 못했어요. 잠시 뒤 다시 해보세요');}
+  }
+  uploading=false; if(openId===id) renderSheet(id,false); renderTrail();
+  if(ok) toast(`사진 ${ok}장을 담았어요`);
+}
+function toggleVisit(id){
+  const m=mk(id), t=byId[id];
+  if(m.v){setMark(id,{v:false});toast(t.n+' 기록을 되돌렸어요');renderSheet(id,false);renderAll();return;}
+  setMark(id,{v:true,vd:m.vd||today()});
+  renderSheet(id,true); renderAll(id);
+  const n=T.filter(x=>mk(x.id).v).length;
+  const rDone=T.filter(x=>x.r===t.r).every(x=>mk(x.id).v);
+  const cDone=COURSES.find(c=>c.ids.includes(id)&&c.ids.every(x=>mk(x).v));
+  setTimeout(()=>toast(cDone?`"${cDone.n}" 순례 완주! 정말 장해요`:rDone?`${REG_FULL[t.r]} 사찰을 모두 다녀왔어요! 완주 축하해요`:`전국 ${n}번째로 다녀온 사찰이에요`),2900);
+  const inn=t._in; inn.classList.remove('bloom'); void inn.getBBox; requestAnimationFrame(()=>inn.classList.add('bloom'));
+  fx.burst(); bloomFX(t.n);
+}
+function toggleWish(id){
+  const m=mk(id), t=byId[id]; setMark(id,{w:!m.w});
+  toast(!m.w?t.n+'을(를) 가고 싶은 곳에 담았어요':'가고 싶은 곳에서 뺐어요');
+  renderSheet(id,false); renderAll();
+}
+function bloomFX(name){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.bloomfx').forEach(e=>e.remove());
+  const pet=(r,f,d,sc)=>`<g class="pt" style="--r:${r}deg;--d:${d}s"><path d="M0 0 C-${15*sc} -${14*sc} -${13*sc} -${44*sc} 0 -${64*sc} C${13*sc} -${44*sc} ${15*sc} -${14*sc} 0 0Z" fill="${f}" stroke="var(--paper)" stroke-width="2"/></g>`;
+  const sparks=[[-70,-70],[72,-60],[-88,-10],[90,-20],[0,-104]].map(([x,y],i)=>`<circle class="sp" cx="${x}" cy="${y}" r="${3+i%2*2}" fill="var(--gold)" style="animation-delay:${1.3+i*.08}s"/>`).join('');
+  const el=document.createElement('div'); el.className='bloomfx'; el.setAttribute('aria-hidden','true');
+  el.innerHTML=`<svg viewBox="-120 -120 240 180"><g transform="translate(0 30)">
+    <ellipse class="lf" cx="-52" cy="8" rx="56" ry="14" fill="var(--leaf)" opacity=".9"/><ellipse class="lf" cx="52" cy="8" rx="56" ry="14" fill="var(--leaf)" opacity=".9" style="animation-delay:.1s"/>
+    ${pet(-78,'var(--lotus-2)',.25,.8)}${pet(78,'var(--lotus-2)',.25,.8)}
+    ${pet(-52,'var(--lotus-2)',.4,.95)}${pet(52,'var(--lotus-2)',.4,.95)}
+    ${pet(-26,'var(--lotus)',.6,1)}${pet(26,'var(--lotus)',.6,1)}
+    ${pet(0,'var(--lotus)',.8,1.08)}
+    <circle class="sd" cx="0" cy="-10" r="7" fill="#ffd66b"/>${sparks}</g></svg><p>${name}에 연꽃이 피었어요</p>`;
+  document.body.appendChild(el);
+  setTimeout(()=>el.classList.add('out'),2500); setTimeout(()=>el.remove(),3200);
+}
+let toastT; function toast(msg){const e=$('#toast');e.textContent=msg;e.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>e.classList.remove('on'),2600)}
+
+function renderAll(fresh){drawMarkers();applyVis();renderList();renderProgress();renderBook(fresh);renderTrail();renderCourses();renderRec(false);}
+
+/* ---------- pilgrimage courses ---------- */
+const COURSES=[
+  {n:'3보사찰',d:'부처님(불보)·가르침(법보)·스님(승보)을<br>상징하는 우리나라 대표 세 절이에요.',ids:['tongdo','haein','songgwang']},
+  {n:'4대 관음성지',d:'바다를 바라보는<br>관세음보살 기도처 네 곳이에요.',ids:['naksan','bomun','bori','hyangil']},
+  {n:'5대 적멸보궁',d:'부처님 진신사리를 모신 다섯 성지예요.<br>그래서 법당에 불상이 없어요.',ids:['tongdo','sangwon','bongjeongam','beopheung','jeongam']},
+  {n:'세계유산 산사',d:'유네스코 세계유산<br>"산사, 한국의 산지승원" 일곱 곳이에요.',ids:['tongdo','buseok','bongjeong','beopju','magok','seonam','daeheung']}
+];
+function renderCourses(){
+  $('#courses').innerHTML=COURSES.map(c=>{const v=c.ids.filter(x=>mk(x).v).length,done=v===c.ids.length;
+    return `<div class="course ${done?'done':''}">${done?'<span class="done-badge">완주</span>':''}<h3>${c.n}<small>${v} / ${c.ids.length}</small></h3><p>${c.d}</p><div class="cbar"><i style="width:${v/c.ids.length*100}%"></i></div><div class="cb">${c.ids.map(x=>{const t=byId[x];return `<button data-id="${x}" class="${mk(x).v?'v':''}">${mk(x).v?icon('v',18):''}${t.n}</button>`}).join('')}</div></div>`}).join('');
+}
+$('#courses').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b)openSheet(b.dataset.id)});
+
+/* ---------- custom temples ---------- */
+let picking=false, draft=null;
+const clean=v=>String(v||'').replace(/[<>&"`]/g,'').trim().slice(0,60);
+function addTemple(c){
+  const t=Object.assign({h:'',w:{},d:'주유니가 직접 추가한 절이에요.',custom:true},c);
+  t.s=Object.keys(t.w); T.push(t); byId[t.id]=t;
+  if($('#markers')) {makeMarker(t,0); placeMarkers();}
+  return t;
+}
+function removeCustom(id){
+  const t=byId[id]; if(!t) return;
+  S.custom=(S.custom||[]).filter(c=>c.id!==id); delete S.marks[id];
+  T.splice(T.indexOf(t),1); delete byId[id]; t._g&&t._g.remove();
+  save(); closeSheet(); renderAll(); toast(t.n+'을(를) 목록에서 지웠어요');
+}
+function openAdd(){
+  lastFocus=document.activeElement; openId='__add';
+  renderAdd(); const sh=$('#sheet'), bd=$('#backdrop');
+  sh.hidden=false; bd.hidden=false;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{sh.classList.add('on');bd.classList.add('on');}));
+  sh.scrollTop=0;
+}
+function renderAdd(){
+  draft=draft||{n:'',r:'gg',t:'',a:''};
+  const sh=$('#sheet'); const has=draft.la!=null;
+  sh.innerHTML=`<div class="sheet-body" style="padding-top:28px"><button class="closex" aria-label="닫기">✕</button>
+    <div><div class="eyebrow">목록에 없는 절</div><h2 id="sheetTitle" style="margin-top:4px">직접 추가하기</h2></div>
+    <div class="field"><label for="fN">절 이름</label><input id="fN" value="${draft.n}" placeholder="예: 동네 약사사" maxlength="40"></div>
+    <div class="field"><label>위치</label><div class="locbox ${has?'ok':''}"><span>${has?'지도에서 위치를 골랐어요':'아직 위치를 고르지 않았어요'}</span><button class="btn ${has?'line':'primary'}" id="fPick">${has?'다시 고르기':'지도에서 위치 찍기'}</button></div></div>
+    <div class="field"><label for="fR">지역</label><select id="fR">${Object.entries(REG_FULL).map(([k,v])=>`<option value="${k}" ${draft.r===k?'selected':''}>${v}</option>`).join('')}</select></div>
+    <div class="field"><label for="fA">주소 (몰라도 괜찮아요)</label><input id="fA" value="${draft.a}" placeholder="예: 경기 성남시 ..." maxlength="60"></div>
+    <div class="field"><label for="fT">전화번호 (몰라도 괜찮아요)</label><input id="fT" value="${draft.t}" inputmode="tel" placeholder="예: 031-123-4567" maxlength="20"></div>
+    <button class="btn seal" id="fSave" style="min-height:58px;font-size:18px">추가하기</button>
+  </div>`;
+  const keep=()=>{draft.n=$('#fN').value;draft.r=$('#fR').value;draft.a=$('#fA').value;draft.t=$('#fT').value;};
+  sh.querySelector('.closex').onclick=()=>{draft=null;closeSheet()};
+  $('#fPick').onclick=()=>{keep();startPick();};
+  $('#fSave').onclick=()=>{keep();
+    if(!clean(draft.n)){toast('절 이름을 적어주세요');$('#fN').focus();return;}
+    if(draft.la==null){toast('지도에서 위치를 먼저 골라주세요');return;}
+    const c={id:'c'+Date.now(),n:clean(draft.n),r:draft.r,a:clean(draft.a),t:clean(draft.t).replace(/[^0-9-]/g,''),la:+draft.la.toFixed(4),lo:+draft.lo.toFixed(4)};
+    S.custom=(S.custom||[]); S.custom.push(c); save();
+    const t=addTemple(c); draft=null; renderAll();
+    openId=t.id; renderSheet(t.id,false); toast(t.n+'을(를) 지도에 추가했어요');
+  };
+}
+function startPick(){
+  closeSheet(); picking=true;
+  $('.mapcard').classList.add('picking'); $('#pickbar').hidden=false;
+  $('.mapcard').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function stopPick(){picking=false;$('.mapcard').classList.remove('picking');$('#pickbar').hidden=true;}
+function onPick(e){
+  if(!picking) return;
+  const pt=svg.createSVGPoint(); pt.x=e.clientX; pt.y=e.clientY;
+  const p=pt.matrixTransform(svg.getScreenCTM().inverse());
+  draft.lo=p.x/CX+LON0; draft.la=LAT0-p.y/100;
+  const near=T.filter(t=>!t.custom).map(t=>[t,dist(t,{la:draft.la,lo:draft.lo})]).sort((a,b)=>a[1]-b[1])[0];
+  if(near) draft.r=near[0].r;
+  stopPick(); openAdd();
+}
+$('#addBtn').addEventListener('click',()=>{draft=null;openAdd();});
+$('#pickCancel').addEventListener('click',()=>{stopPick();openAdd();});
+
+
+/* ---------- seasonal particles ---------- */
+const fx=(()=>{
+  const cv=$('#fx'), c=cv.getContext('2d'); let W=0,H=0,dpr=1,parts=[],mode='autumn',raf=0;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const COL={spring:['#f6b9c9','#f9d3de','#eea2b8','#fff0f4'],autumn:['#d4421f','#e8762a','#efa82f','#b02f1c','#c95a22'],summer:['#d9f28a','#f4f9b0'],winter:['#ffffff']};
+  function resize(){dpr=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0)}
+  function count(){const a=W*H/(1200*800);return Math.round({spring:30,summer:24,autumn:26,winter:90}[mode]*Math.max(.45,Math.min(1.3,a)))}
+  function make(init){
+    const p={x:Math.random()*W,y:init?Math.random()*H:-20-Math.random()*60,rot:Math.random()*6.28,vr:(Math.random()-.5)*.04,ph:Math.random()*6.28,col:COL[mode][Math.floor(Math.random()*COL[mode].length)]};
+    if(mode==='winter'){p.s=1+Math.random()*3.2;p.vy=.4+p.s*.25;p.vx=(Math.random()-.5)*.3}
+    else if(mode==='autumn'){p.s=8+Math.random()*9;p.vy=.6+Math.random()*.8;p.vx=(Math.random()-.5)*.6}
+    else if(mode==='spring'){p.s=4+Math.random()*4;p.vy=.5+Math.random()*.6;p.vx=.3+Math.random()*.5}
+    else {p.s=2+Math.random()*2.5;p.vy=(Math.random()-.5)*.3;p.vx=(Math.random()-.5)*.3;if(!init)p.y=Math.random()*H}
+    return p;
+  }
+  function maple(p){c.save();c.translate(p.x,p.y);c.rotate(p.rot);c.scale(1,.75+Math.sin(p.ph)*.25);c.fillStyle=p.col;c.beginPath();const s=p.s;
+    for(let i=0;i<=50;i++){const a=i/50*Math.PI*2;const lob=Math.pow(Math.abs(Math.cos(a*2.5)),.6);const r=s*(.35+.65*lob)*(a>Math.PI*.35&&a<Math.PI*.65?.5:1);const x=Math.cos(a-Math.PI/2)*r,y=Math.sin(a-Math.PI/2)*r;i?c.lineTo(x,y):c.moveTo(x,y)}
+    c.fill();c.strokeStyle=p.col;c.lineWidth=1.2;c.beginPath();c.moveTo(0,0);c.lineTo(0,s*1.05);c.stroke();c.restore()}
+  function petal(p){c.save();c.translate(p.x,p.y);c.rotate(p.rot);c.scale(1,.6+Math.sin(p.ph)*.4);c.fillStyle=p.col;c.beginPath();const s=p.s;c.moveTo(0,-s);c.bezierCurveTo(s*.9,-s*.6,s*.8,s*.7,0,s);c.bezierCurveTo(-s*.8,s*.7,-s*.9,-s*.6,0,-s);c.fill();c.restore()}
+  function draw(){
+    c.clearRect(0,0,W,H);
+    for(const p of parts){
+      p.ph+=.03;
+      if(!reduce){
+        if(mode==='summer'){p.x+=p.vx+Math.sin(p.ph*.7)*.3;p.y+=p.vy+Math.cos(p.ph*.5)*.3}
+        else{p.x+=p.vx+Math.sin(p.ph)*(mode==='winter'?.4:.9);p.y+=p.vy;p.rot+=p.vr}
+        if(p.y>H+30||p.x>W+40||p.x<-40){Object.assign(p,make(false));if(mode==='spring')p.x=Math.random()*W-W*.3}
+        if(mode==='summer'&&(p.y<-10||p.y>H+10)){p.y=Math.random()*H}
+      }
+      if(mode==='winter'){c.globalAlpha=.85;c.fillStyle='#fff';c.shadowColor='rgba(120,140,160,.6)';c.shadowBlur=3;c.beginPath();c.arc(p.x,p.y,p.s,0,7);c.fill();c.shadowBlur=0}
+      else if(mode==='autumn'){c.globalAlpha=.9;maple(p)}
+      else if(mode==='spring'){c.globalAlpha=.85;petal(p)}
+      else {const g=.35+.65*Math.max(0,Math.sin(p.ph*1.3));c.globalAlpha=g;c.fillStyle=p.col;c.shadowColor='#e4ff7a';c.shadowBlur=14;c.beginPath();c.arc(p.x,p.y,p.s,0,7);c.fill();c.shadowBlur=0}
+    }
+    c.globalAlpha=1;
+    if(!reduce) raf=requestAnimationFrame(draw);
+  }
+  function set(m){mode=m;resize();parts=Array.from({length:count()},()=>make(true));cancelAnimationFrame(raf);raf=requestAnimationFrame(draw)}
+  function burst(){if(reduce)return;const n=mode==='winter'?40:18;for(let i=0;i<n;i++){const p=make(false);p.x=W/2+(Math.random()-.5)*W*.5;p.y=H*.25+(Math.random()-.5)*80;p.vy=-1-Math.random()*2;p.vx=(Math.random()-.5)*4;p.burst=1;parts.push(p);}setTimeout(()=>{parts=parts.filter(p=>!p.burst)},4500);
+    const grav=()=>{parts.forEach(p=>{if(p.burst){p.vy=Math.min(p.vy+.06,2);p.vx*=.98}});if(parts.some(p=>p.burst))requestAnimationFrame(grav)};grav();}
+  addEventListener('resize',()=>{resize();placeMarkers()});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else if(!reduce)raf=requestAnimationFrame(draw)});
+  return {set,burst};
+})();
+
+/* ---------- boot ---------- */
+document.querySelectorAll('.sz').forEach(b=>b.addEventListener('click',()=>setSeason(b.dataset.s,true)));
+greet(); renderLogin();
+$('#sayBox').addEventListener('click',()=>showSaying(true));
+$('#sayBox').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showSaying(true)}});
+(S.custom||[]).forEach(c=>{if(!byId[c.id])addTemple(c)});
+buildChips(); buildMap();
+document.querySelectorAll('.ic[data-ic]').forEach(e=>e.innerHTML=icon(e.dataset.ic,18));
+try{localStorage.removeItem('juyuni-big')}catch(e){}
+document.body.dataset.season=season;
+setSeason(season,false);
+document.querySelectorAll('.chip[data-r]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r==='all'));
+renderAll();
+new ResizeObserver(()=>placeMarkers()).observe(svg);
+</script>
+
+</body>
+</html>
